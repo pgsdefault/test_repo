@@ -85,7 +85,7 @@ locals {
 output "publicIP_initiative" {
   value = {
     name         = "publicIP-initiative"
-    display_name = "publicIP Initiative"
+    display_name = "123-publicIP Initiative"
     description  = "Initiative for publicIP related policies, including custom and built-in policies."
     policy_definitions = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups

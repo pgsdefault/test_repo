@@ -1,0 +1,127 @@
+name: Azure Policy Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'terraform/policy_deployment/**'
+
+env:
+  TF_VERSION: 1.6.0
+  TF_ROOT: terraform/policy_deployment
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ==================== CHECKOUT ====================
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # ==================== SETUP PYTHON ====================
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # ==================== SETUP TERRAFORM ====================
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+
+      - name: Verify Terraform Installation
+        run: |
+          terraform --version
+          echo "Terraform Root: $TF_ROOT"
+
+      # ==================== TERRAFORM INIT ====================
+      - name: Terraform Init - Policy Deployment
+        working-directory: ${{ env.TF_ROOT }}
+        run: |
+          terraform init -input=false -upgrade \
+            -backend-config="key=policy_deployment.tfstate"
+        env:
+          TF_LOG: INFO
+          TF_LOG_PATH: ${{ github.workspace }}/tf_init_policy.log
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== TERRAFORM VALIDATE ====================
+      - name: Terraform Validate - Policy Deployment
+        working-directory: ${{ env.TF_ROOT }}
+        run: terraform validate
+        env:
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== TERRAFORM PLAN ====================
+      - name: Terraform Plan - Policy Deployment
+        working-directory: ${{ env.TF_ROOT }}
+        run: |
+          terraform plan -out=tfplan \
+            -lock=true \
+            -lock-timeout=10m \
+            -input=false
+        env:
+          TF_LOG: INFO
+          TF_LOG_PATH: ${{ github.workspace }}/tf_plan_policy.log
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== TERRAFORM APPLY ====================
+      - name: Terraform Apply - Policy Deployment
+        #if: github.ref == 'refs/heads/TF_AzurePolicy_DEMO'
+        working-directory: ${{ env.TF_ROOT }}
+        run: terraform apply -auto-approve -lock=true tfplan
+        env:
+          TF_LOG: INFO
+          TF_LOG_PATH: ${{ github.workspace }}/tf_apply_policy.log
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== EXPORT STATE ====================
+      - name: Export Terraform State & Outputs
+        if: always()
+        working-directory: ${{ env.TF_ROOT }}
+        run: |
+          terraform state pull > ${{ github.workspace }}/policy_deployment.tfstate
+          terraform output -json > ${{ github.workspace }}/policy_deployment_outputs.json
+        env:
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== UPLOAD ARTIFACTS ====================
+      - name: Upload Policy Deployment Outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Policy-Deployment-Outputs
+          path: policy_deployment_outputs.json
+
+      - name: Upload Policy Plan Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Policy-Plan-Logs
+          path: tf_plan_policy.log
+
+      - name: Upload Policy Apply Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Policy-Apply-Logs
+          path: tf_apply_policy.log

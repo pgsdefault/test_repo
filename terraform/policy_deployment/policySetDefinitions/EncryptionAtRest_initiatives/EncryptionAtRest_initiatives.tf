@@ -85,7 +85,7 @@ locals {
 output "EncryptionAtRest_initiative" {
   value = {
     name         = "EncryptionAtRest-initiative"
-    display_name = "EncryptionAtRest Initiative"
+    display_name = "123-EncryptionAtRest Initiative"
     description  = "Initiative for EncryptionAtRest policies, including custom and built-in policies."
     policy_definitions = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups

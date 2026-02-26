@@ -97,7 +97,7 @@ locals {
 output "ZeroTrust_initiative" {
   value = {
     name         = "ZeroTrust-initiative"
-    display_name = "Zero Trust Initiative"
+    display_name = "123-Zero Trust Initiative"
     description  = "Initiative for zero trust model, including custom and built-in policies."
     policy_definitions = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups

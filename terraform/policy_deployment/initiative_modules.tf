@@ -23,14 +23,14 @@ module "initiative_assignment" {
       for k, v in local.initiative_ids :
       "${k}-rg" => {
         name                      = "${k}-initiative-assignment-rg"
-        scope                     = "/subscriptions/4fb4560b-49e0-44b7-8192-3bef773c226c/resourceGroups/myRg1"
+        scope                     = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing"
         policy_definition_id      = v.policy_set_definition_id
         parameters                = ""
         description               = v.description
         #assigned_by               = data.azuread_user.current.user_principal_name
         assigned_by               = "Terraform"
         location                  = "South Central Us"
-        user_assigned_identity_id = "/subscriptions/02a2f6f5-5b3b-4baa-a29f-5febfeb27941/resourceGroups/ManagedIdentity-Policy-CSD-Policy-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/CSD-ManagedIdentities-policy-terraform"
+        user_assigned_identity_id = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI"
         exclusions                = lookup(var.policy_exclusions, k, [])
       }
     }

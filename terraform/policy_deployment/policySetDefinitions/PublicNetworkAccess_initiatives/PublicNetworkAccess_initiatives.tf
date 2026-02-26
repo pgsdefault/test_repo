@@ -91,7 +91,7 @@ locals {
 output "PublicNetworkAccess_initiative" {
   value = {
     name         = "PublicNetworkAccess-initiative"
-    display_name = "PublicNetworkAccess Initiative"
+    display_name = "123-PublicNetworkAccess Initiative"
     description  = "Initiative for PublicNetworkAccess related policies, including custom and built-in policies."
     policy_definitions = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups
