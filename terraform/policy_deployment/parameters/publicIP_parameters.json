@@ -1,0 +1,12 @@
+{
+    "loadBalancers-should-not-have-public-IP-assigned.json": {
+        "effect": {
+            "value": "Audit"
+        }
+    },
+     "Configure App Service app slots to use the latest TLS version": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        }
+    }
+}

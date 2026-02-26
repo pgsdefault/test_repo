@@ -1,0 +1,554 @@
+[
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-1",
+    "display_name": "NS-1 Establish network segmentation boundaries ",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-2",
+    "display_name": "NS-2 Secure cloud services with network controls",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-3",
+    "display_name": "NS-3 Deploy firewall at the edge of enterprise network",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-4",
+    "display_name": "NS-4 Deploy intrusion detection/intrusion prevention systems (IDS/IPS)",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-5",
+    "display_name": "NS-5 Deploy DDOS protection",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-6",
+    "display_name": "NS-6 Deploy web application firewall",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-7",
+    "display_name": "NS-7 Simplify network security configuration",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-8",
+    "display_name": "NS-8 Detect and disable insecure services and protocols",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-9",
+    "display_name": "NS-9 Connect on-premises or cloud network privately \n",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_NS-10",
+    "display_name": "NS-10 Ensure Domain Name System (DNS) security",
+    "description": "NA",
+    "category": "Network Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DP-1",
+    "display_name": "DP-1 Discover, classify, and label sensitive data\n\n",
+    "description": "NA",
+    "category": "Data Protection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DP-2",
+    "display_name": "DP-2 Monitor anomalies and threats targeting sensitive data",
+    "description": "NA",
+    "category": "Data Protection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DP-3",
+    "display_name": "DP-3 Encrypt sensitive data in transit",
+    "description": "NA",
+    "category": "Data Protection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DP-4",
+    "display_name": "DP-4 Enable data at rest encryption by default",
+    "description": "NA",
+    "category": "Data Protection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DP-5",
+    "display_name": "DP-5 Use customer-managed key option in data at rest encryption when required",
+    "description": "NA",
+    "category": "Data Protection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DP-6",
+    "display_name": "DP-6 Use a secure key management process",
+    "description": "NA",
+    "category": "Data Protection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DP-7",
+    "display_name": "DP-7 Use a secure certificate management process",
+    "description": "NA",
+    "category": "Data Protection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DP-8",
+    "display_name": "DP-8 Ensure security of key and certificate repository ",
+    "description": "NA",
+    "category": "Data Protection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-1",
+    "display_name": "IM-1 Use centralized identity and authentication system",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-2",
+    "display_name": "IM-2 Protect identity and authentication system",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-3",
+    "display_name": "IM-3 Manage application identities securely and automatically",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-4",
+    "display_name": "IM-4 Authenticate server and services",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-5",
+    "display_name": "IM-5 Use single sign-on (SSO) for application access",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-6",
+    "display_name": "IM-6 Use strong authentication controls",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-7",
+    "display_name": "IM-7 Restrict resource access based on conditions",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-8",
+    "display_name": "IM-8 Restrict the exposure of credential and secrets",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IM-9",
+    "display_name": "IM-9 Secure user access to existing applications",
+    "description": "NA",
+    "category": "Identity Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PA-1",
+    "display_name": "PA-1 Separate and limit highly privileged/administrative users",
+    "description": "NA",
+    "category": "Privileged Access"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PA-2",
+    "display_name": "PA-2 Avoid standing access for accounts and permissions",
+    "description": "NA",
+    "category": "Privileged Access"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PA-3",
+    "display_name": "PA-3 Manage identity and access lifecycle",
+    "description": "NA",
+    "category": "Privileged Access"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PA-4",
+    "display_name": "PA-4 Review and reconcile user access regularly",
+    "description": "NA",
+    "category": "Privileged Access"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PA-5",
+    "display_name": "PA-5 Set up emergency access",
+    "description": "NA",
+    "category": "Privileged Access"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PA-6",
+    "display_name": "PA-6 Use privileged access workstations",
+    "description": "NA",
+    "category": "Privileged Access"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PA-7",
+    "display_name": "PA-7 Follow just enough administration (least privilege) principle",
+    "description": "NA",
+    "category": "Privileged Access"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PA-8",
+    "display_name": "PA-8 Choose approval process for third-party support\n\n",
+    "description": "NA",
+    "category": "Privileged Access"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PV-1",
+    "display_name": "PV-1 Define and establish secure configurations ",
+    "description": "NA",
+    "category": "Posture and Vulnerability Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PV-2",
+    "display_name": "PV-2 Audit and enforce secure configurations",
+    "description": "NA",
+    "category": "Posture and Vulnerability Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PV-3",
+    "display_name": "PV-3 Define and establish secure configurations for compute resources",
+    "description": "NA",
+    "category": "Posture and Vulnerability Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PV-4",
+    "display_name": "PV-4 Audit and enforce secure configurations for compute resources",
+    "description": "NA",
+    "category": "Posture and Vulnerability Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PV-5",
+    "display_name": "PV-5 Perform vulnerability assessments",
+    "description": "NA",
+    "category": "Posture and Vulnerability Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PV-6",
+    "display_name": "PV-6 Rapidly and automatically remediate vulnerabilities",
+    "description": "NA",
+    "category": "Posture and Vulnerability Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_PV-7",
+    "display_name": "PV-7 Conduct regular red team operations",
+    "description": "NA",
+    "category": "Posture and Vulnerability Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_LT-1",
+    "display_name": "LT-1 Enable threat detection capabilities",
+    "description": "NA",
+    "category": "Logging and Threat Detection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_LT-2",
+    "display_name": "LT-2 Enable threat detection for identity and access management",
+    "description": "NA",
+    "category": "Logging and Threat Detection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_LT-3",
+    "display_name": "LT-3 Enable logging for security investigation",
+    "description": "NA",
+    "category": "Logging and Threat Detection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_LT-4",
+    "display_name": "LT-4 Enable network logging for security investigation\n",
+    "description": "NA",
+    "category": "Logging and Threat Detection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_LT-5",
+    "display_name": "LT-5 Centralize security log management and analysis",
+    "description": "NA",
+    "category": "Logging and Threat Detection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_LT-6",
+    "display_name": "LT-6 Configure log storage retention",
+    "description": "NA",
+    "category": "Logging and Threat Detection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_LT-7",
+    "display_name": "LT-7 Use approved time synchronization sources",
+    "description": "NA",
+    "category": "Logging and Threat Detection"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AM-1",
+    "display_name": "AM-1 Track asset inventory and their risks",
+    "description": "NA",
+    "category": "Asset Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AM-2",
+    "display_name": "AM-2 Use only approved services\n",
+    "description": "NA",
+    "category": "Asset Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AM-3",
+    "display_name": "AM-3 Ensure security of asset lifecycle management\n",
+    "description": "NA",
+    "category": "Asset Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AM-4",
+    "display_name": "AM-4 Limit access to asset management\n",
+    "description": "NA",
+    "category": "Asset Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AM-5",
+    "display_name": "AM-5 Use only approved applications in virtual machine",
+    "description": "NA",
+    "category": "Asset Management"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_ES-1",
+    "display_name": "ES-1 Use Endpoint Detection and Response (EDR)",
+    "description": "NA",
+    "category": "Endpoint Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_ES-2",
+    "display_name": "ES-2 Use modern anti-malware software",
+    "description": "NA",
+    "category": "Endpoint Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_ES-3",
+    "display_name": "ES-3 Ensure anti-malware software and signatures are updated",
+    "description": "NA",
+    "category": "Endpoint Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_BR-1",
+    "display_name": "BR-1 Ensure regular automated backups",
+    "description": "NA",
+    "category": "Backup and Recovery"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_BR-2",
+    "display_name": "BR-2 Protect backup and recovery data",
+    "description": "NA",
+    "category": "Backup and Recovery"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_BR-3",
+    "display_name": "BR-3 Monitor backups",
+    "description": "NA",
+    "category": "Backup and Recovery"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_BR-4",
+    "display_name": "BR-4 Regularly test backup",
+    "description": "NA",
+    "category": "Backup and Recovery"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IR-1",
+    "display_name": "IR-1 Preparation - update incident response plan and handling process",
+    "description": "NA",
+    "category": "Incident Response"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IR-2",
+    "display_name": "IR-2 Preparation - setup incident notification",
+    "description": "NA",
+    "category": "Incident Response"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IR-3",
+    "display_name": "IR-3 Detection and analysis - create incidents based on high-quality alerts",
+    "description": "NA",
+    "category": "Incident Response"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IR-4",
+    "display_name": "IR-4 Detection and analysis - investigate an incident",
+    "description": "NA",
+    "category": "Incident Response"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IR-5",
+    "display_name": "IR-5 Detection and analysis - prioritize incidents",
+    "description": "NA",
+    "category": "Incident Response"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IR-6",
+    "display_name": "IR-6 Containment, eradication and recovery - automate the incident handling",
+    "description": "NA",
+    "category": "Incident Response"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_IR-7",
+    "display_name": "IR-7 Post-incident activity - conduct lesson learned and retain evidence",
+    "description": "NA",
+    "category": "Incident Response"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DS-1",
+    "display_name": "DS-1 Conduct threat modeling\n\n",
+    "description": "NA",
+    "category": "DevOps Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DS-2",
+    "display_name": "DS-2 Ensure software supply chain security",
+    "description": "NA",
+    "category": "DevOps Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DS-3",
+    "display_name": "DS-3 Secure DevOps infrastructure",
+    "description": "NA",
+    "category": "DevOps Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DS-4",
+    "display_name": "DS-4 Integrate static application security testing into DevOps pipeline",
+    "description": "NA",
+    "category": "DevOps Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DS-5",
+    "display_name": "DS-5 Integrate dynamic application security testing into DevOps pipeline",
+    "description": "NA",
+    "category": "DevOps Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DS-6",
+    "display_name": "DS-6 Enforce security of workload throughout DevOps lifecycle",
+    "description": "NA",
+    "category": "DevOps Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_DS-7",
+    "display_name": "DS-7 Enable logging and monitoring in DevOps",
+    "description": "NA",
+    "category": "DevOps Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-1",
+    "display_name": "GS-1 Align organization roles, responsibilities, and accountabilities",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-2",
+    "display_name": "GS-2 Define and implement enterprise segmentation/separation of duties strategy ",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-3",
+    "display_name": "GS-3 Define and implement data protection strategy",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-4",
+    "display_name": "GS-4 Define and implement network security strategy",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-5",
+    "display_name": "GS-5 Define and implement security posture management strategy",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-6",
+    "display_name": "GS-6 Define and implement identity and privileged access strategy",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-7",
+    "display_name": "GS-7 Define and implement logging, threat detection and incident response strategy",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-8",
+    "display_name": "GS-8 Define and implement backup and recovery strategy",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-9",
+    "display_name": "GS-9 Define and implement endpoint security strategy",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_GS-10",
+    "display_name": "GS-10 Define and implement DevOps security strategy",
+    "description": "NA",
+    "category": "Governance and Strategy"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AI-1",
+    "display_name": "AI-1 Ensure use of approved models",
+    "description": "NA",
+    "category": "AI Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AI-2",
+    "display_name": "AI-2 Implement multi-layered content filtering",
+    "description": "NA",
+    "category": "AI Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AI-3",
+    "display_name": "AI-3 Adopt safety meta-prompts",
+    "description": "NA",
+    "category": "AI Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AI-4",
+    "display_name": "AI-4 Apply least privilege for agent functions",
+    "description": "NA",
+    "category": "AI Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AI-5",
+    "display_name": "AI-5 Ensure human-in-the-loop",
+    "description": "NA",
+    "category": "AI Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AI-6",
+    "display_name": "AI-6 Establish monitoring and detection",
+    "description": "NA",
+    "category": "AI Security"
+  },
+  {
+    "name": "Azure_Security_Benchmark_v3.0_AI-7",
+    "display_name": "AI-7 Perform continuous AI Red Teaming",
+    "description": "NA",
+    "category": "AI Security"
+  }
+]

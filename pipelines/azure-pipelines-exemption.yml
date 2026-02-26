@@ -1,0 +1,162 @@
+# ==================== AZURE PIPELINES - EXEMPTION ====================
+# Purpose: Deploy policy exemptions for resources that require exception
+# Triggered by: Changes in policy_exemption.tf and policy_exemptions.auto.tfvars
+# State File: exemption.tfstate
+# Dependencies: Policy Deployment Pipeline MUST complete successfully first
+# Order: This runs AFTER policy deployment completes (can run parallel with remediation)
+
+trigger:
+- main
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+- group: Azure_Policy_Demo
+- name: TF_VERSION
+  value: '1.6.0'
+
+- name: TF_ROOT
+  value: '$(System.DefaultWorkingDirectory)/terraform/exemption'
+
+stages:
+  # ==================== VALIDATION STAGE ====================
+  - stage: ValidatePolicyState
+    displayName: 'Validate Policy Deployment State'
+    jobs:
+      - job: CheckPolicyDeployment
+        displayName: 'Check Policy State Alignment'
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: '3.x'
+              addToPath: true
+            displayName: 'Setup Python'
+
+          - script: |
+              pip install azure-cli azure-identity
+            displayName: 'Install Dependencies'
+
+          - script: |
+              python3 scripts/validators/check_policy_state.py
+            displayName: 'Validate Policy Deployment Completed'
+            env:
+              ARM_CLIENT_ID: $(client_id)
+              ARM_CLIENT_SECRET: $(client_secret)
+              ARM_SUBSCRIPTION_ID: $(subscription_id)
+              ARM_TENANT_ID: $(tenant_id)
+            continueOnError: false
+
+  # ==================== DEPLOYMENT STAGE ====================
+  - stage: DeployExemption
+    displayName: 'Deploy Policy Exemptions'
+    dependsOn: ValidatePolicyState
+    condition: succeeded()
+    jobs:
+      - job: TerraformExemption
+        displayName: 'Terraform Plan & Apply - Exemption'
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: '3.x'
+              addToPath: true
+            displayName: 'Setup Python'
+
+          - script: |
+              curl -sL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+              sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+              sudo apt-get update && sudo apt-get install -y terraform=$(TF_VERSION)*
+            displayName: 'Install Terraform'
+
+          - script: |
+              terraform --version
+              echo "Terraform Root: $(TF_ROOT)"
+            displayName: 'Verify Terraform Installation'
+
+          # ==================== TERRAFORM INIT ====================
+          - script: |
+              cd $(TF_ROOT)
+              terraform init -input=false -upgrade \
+                -backend-config="key=exemption.tfstate"
+            displayName: 'Terraform Init - Exemption'
+            env:
+              TF_LOG: 'INFO'
+              TF_LOG_PATH: '$(System.DefaultWorkingDirectory)/tf_init_exemption.log'
+              ARM_CLIENT_ID: $(client_id)
+              ARM_CLIENT_SECRET: $(client_secret)
+              ARM_SUBSCRIPTION_ID: $(subscription_id)
+              ARM_TENANT_ID: $(tenant_id)
+
+          - script: |
+              cd $(TF_ROOT)
+              terraform validate
+            displayName: 'Terraform Validate - Exemption'
+            env:
+              ARM_CLIENT_ID: $(client_id)
+              ARM_CLIENT_SECRET: $(client_secret)
+              ARM_SUBSCRIPTION_ID: $(subscription_id)
+              ARM_TENANT_ID: $(tenant_id)
+
+          # ==================== TERRAFORM PLAN ====================
+          - script: |
+              cd $(TF_ROOT)
+              terraform plan -out=tfplan \
+                -lock=true \
+                -lock-timeout=10m \
+                -input=false
+            displayName: 'Terraform Plan - Exemption'
+            env:
+              TF_LOG: 'INFO'
+              TF_LOG_PATH: '$(System.DefaultWorkingDirectory)/tf_plan_exemption.log'
+              ARM_CLIENT_ID: $(client_id)
+              ARM_CLIENT_SECRET: $(client_secret)
+              ARM_SUBSCRIPTION_ID: $(subscription_id)
+              ARM_TENANT_ID: $(tenant_id)
+
+          # ==================== TERRAFORM APPLY ====================
+          - script: |
+              cd $(TF_ROOT)
+              terraform apply -auto-approve -lock=true tfplan
+            displayName: 'Terraform Apply - Exemption'
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/TF_AzurePolicy_DEMO'))
+            env:
+              TF_LOG: 'INFO'
+              TF_LOG_PATH: '$(System.DefaultWorkingDirectory)/tf_apply_exemption.log'
+              ARM_CLIENT_ID: $(client_id)
+              ARM_CLIENT_SECRET: $(client_secret)
+              ARM_SUBSCRIPTION_ID: $(subscription_id)
+              ARM_TENANT_ID: $(tenant_id)
+
+          # ==================== EXPORT STATE ====================
+          - script: |
+              cd $(TF_ROOT)
+              terraform state pull > $(System.DefaultWorkingDirectory)/exemption.tfstate
+              terraform output -json > $(System.DefaultWorkingDirectory)/exemption_outputs.json
+            displayName: 'Export Terraform State & Outputs'
+            condition: always()
+            env:
+              ARM_CLIENT_ID: $(client_id)
+              ARM_CLIENT_SECRET: $(client_secret)
+              ARM_SUBSCRIPTION_ID: $(subscription_id)
+              ARM_TENANT_ID: $(tenant_id)
+
+          # ==================== PUBLISH ARTIFACTS ====================
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: '$(System.DefaultWorkingDirectory)/exemption_outputs.json'
+              artifact: 'Exemption-Outputs'
+            displayName: 'Publish Exemption Outputs'
+            condition: always()
+
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: '$(System.DefaultWorkingDirectory)/tf_plan_exemption.log'
+              artifact: 'Exemption-Plan-Logs'
+            displayName: 'Publish Exemption Plan Logs'
+            condition: always()
+
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: '$(System.DefaultWorkingDirectory)/tf_apply_exemption.log'
+              artifact: 'Exemption-Apply-Logs'
+            displayName: 'Publish Exemption Apply Logs'
+            condition: always()

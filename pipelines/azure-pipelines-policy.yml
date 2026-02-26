@@ -1,0 +1,127 @@
+# ==================== AZURE PIPELINES - POLICY DEPLOYMENT ====================
+# Purpose: Deploy policy definitions and policy set definitions (initiatives)
+# Triggered by: Changes in initiative files, policy definitions, and related configs
+# State File: policy_deployment.tfstate
+# Output: Initiative IDs and Policy Assignment IDs for dependent pipelines
+# Dependencies: None (runs independently)
+
+trigger:
+- main
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+- group: Azure_Policy_Demo
+- name: TF_VERSION
+  value: '1.6.0'
+
+- name: TF_ROOT
+  value: '$(System.DefaultWorkingDirectory)/terraform/policy_deployment'
+
+steps:
+  # ==================== SETUP ====================
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.x'
+      addToPath: true
+    displayName: 'Setup Python'
+
+  - script: |
+      curl -sL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+      sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+      sudo apt-get update && sudo apt-get install -y terraform=$(TF_VERSION)*
+    displayName: 'Install Terraform'
+
+  - script: |
+      terraform --version
+      echo "Terraform Root: $(TF_ROOT)"
+    displayName: 'Verify Terraform Installation'
+
+  # ==================== TERRAFORM INIT ====================
+  - script: |
+      cd $(TF_ROOT)
+      terraform init -input=false -upgrade \
+        -backend-config="key=policy_deployment.tfstate"
+    displayName: 'Terraform Init - Policy Deployment'
+    env:
+      TF_LOG: 'INFO'
+      TF_LOG_PATH: '$(System.DefaultWorkingDirectory)/tf_init_policy.log'
+      ARM_CLIENT_ID: $(client_id)
+      ARM_CLIENT_SECRET: $(client_secret)
+      ARM_SUBSCRIPTION_ID: $(subscription_id)
+      ARM_TENANT_ID: $(tenant_id)
+
+  # ==================== TERRAFORM VALIDATE ====================
+  - script: |
+      cd $(TF_ROOT)
+      terraform validate
+    displayName: 'Terraform Validate - Policy Deployment'
+    env:
+      ARM_CLIENT_ID: $(client_id)
+      ARM_CLIENT_SECRET: $(client_secret)
+      ARM_SUBSCRIPTION_ID: $(subscription_id)
+      ARM_TENANT_ID: $(tenant_id)
+
+  # ==================== TERRAFORM PLAN ====================
+  - script: |
+      cd $(TF_ROOT)
+      terraform plan -out=tfplan \
+        -lock=true \
+        -lock-timeout=10m \
+        -input=false
+    displayName: 'Terraform Plan - Policy Deployment'
+    env:
+      TF_LOG: 'INFO'
+      TF_LOG_PATH: '$(System.DefaultWorkingDirectory)/tf_plan_policy.log'
+      ARM_CLIENT_ID: $(client_id)
+      ARM_CLIENT_SECRET: $(client_secret)
+      ARM_SUBSCRIPTION_ID: $(subscription_id)
+      ARM_TENANT_ID: $(tenant_id)
+
+  # ==================== TERRAFORM APPLY ====================
+  - script: |
+      cd $(TF_ROOT)
+      terraform apply -auto-approve -lock=true tfplan
+    displayName: 'Terraform Apply - Policy Deployment'
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/TF_AzurePolicy_DEMO'))
+    env:
+      TF_LOG: 'INFO'
+      TF_LOG_PATH: '$(System.DefaultWorkingDirectory)/tf_apply_policy.log'
+      ARM_CLIENT_ID: $(client_id)
+      ARM_CLIENT_SECRET: $(client_secret)
+      ARM_SUBSCRIPTION_ID: $(subscription_id)
+      ARM_TENANT_ID: $(tenant_id)
+
+  # ==================== EXPORT STATE ====================
+  - script: |
+      cd $(TF_ROOT)
+      terraform state pull > $(System.DefaultWorkingDirectory)/policy_deployment.tfstate
+      terraform output -json > $(System.DefaultWorkingDirectory)/policy_deployment_outputs.json
+    displayName: 'Export Terraform State & Outputs'
+    condition: always()
+    env:
+      ARM_CLIENT_ID: $(client_id)
+      ARM_CLIENT_SECRET: $(client_secret)
+      ARM_SUBSCRIPTION_ID: $(subscription_id)
+      ARM_TENANT_ID: $(tenant_id)
+
+  # ==================== PUBLISH ARTIFACTS ====================
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(System.DefaultWorkingDirectory)/policy_deployment_outputs.json'
+      artifact: 'Policy-Deployment-Outputs'
+    displayName: 'Publish Policy Deployment Outputs'
+    condition: always()
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(System.DefaultWorkingDirectory)/tf_plan_policy.log'
+      artifact: 'Policy-Plan-Logs'
+    displayName: 'Publish Policy Plan Logs'
+    condition: always()
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(System.DefaultWorkingDirectory)/tf_apply_policy.log'
+      artifact: 'Policy-Apply-Logs'
+    condition: always()

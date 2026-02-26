@@ -1,0 +1,12 @@
+{
+    "Azure Batch account should use customer-managed keys to encrypt data": {
+        "effect": {
+            "value": "Audit"
+        }
+    },
+    "Container registries should be encrypted with a customer-managed key": {
+        "effect": {
+            "value": "Audit"
+        }
+    }
+}

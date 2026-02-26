@@ -1,0 +1,512 @@
+[
+  {
+    "name": "CIS_Azure_2.0.0_1.5",
+    "display_name": "Ensure Guest Users Are Reviewed on a Regular Basis",
+    "description": "Azure AD is extended to include Azure AD B2B collaboration, allowing you to invite people from outside your organization to be guest users in your cloud account and sign in with their own work, school, or social identities. Guest users allow you to share your company's applications and services with users from any other organization, while maintaining control over your own corporate data. \n\nWork with external partners, large or small, even if they don't have Azure AD or an IT department. A simple invitation and redemption process lets partners use their own credentials to access your company's resources as a guest user.\n\nGuest users in every subscription should be review on a regular basis to ensure that inactive and unneeded accounts are removed.\nGuest users in the Azure AD are generally required for collaboration purposes in Office 365, and may also be required for Azure functions in enterprises with multiple Azure tenants. Guest users are typically added outside your employee on-boarding/off-boarding process and could potentially be overlooked indefinitely, leading to a potential vulnerability. To prevent this, guest users should be reviewed on a regular basis. During this audit, guest users should also be determined to not have administrative privileges.",
+    "category": "1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_1.23",
+    "display_name": "Ensure That No Custom Subscription Administrator Roles Exist",
+    "description": "The principle of least privilege should be followed and only necessary privileges should be assigned instead of allowing full administrative access.\nClassic subscription admin roles offer basic access management and include Account Administrator, Service Administrator, and Co-Administrators. It is recommended the least necessary permissions be given initially. Permissions can be added as needed by the account holder. This ensures the account holder cannot perform actions which were not intended.",
+    "category": "1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.1",
+    "display_name": "Ensure That Microsoft Defender for Servers Is Set to 'On'",
+    "description": "Turning on Microsoft Defender for Servers enables threat detection for Servers, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\nEnabling Microsoft Defender for Servers allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.2",
+    "display_name": "Ensure That Microsoft Defender for App Services Is Set To 'On'",
+    "description": "Turning on Microsoft Defender for App Service enables threat detection for App Service, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\nEnabling Microsoft Defender for App Service allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.3",
+    "display_name": "Ensure That Microsoft Defender for Databases Is Set To 'On'",
+    "description": "Turning on Microsoft Defender for Databases enables threat detection for the instances running your database software. This provides threat intelligence, anomaly detection, and behavior analytics in the Azure Microsoft Defender for Cloud. Instead of being enabled on services like Platform as a Service (PaaS), this implementation will run within your instances as Infrastructure as a Service (IaaS) on the Operating Systems hosting your databases.\nEnabling Microsoft Defender for Azure SQL Databases allows your organization more granular control of the infrastructure running your database software. Instead of waiting on Microsoft release updates or other similar processes, you can manage them yourself. Threat detection is provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.4",
+    "display_name": "Ensure That Microsoft Defender for Azure SQL Databases Is Set To 'On'",
+    "description": "Turning on Microsoft Defender for Azure SQL Databases enables threat detection for Azure SQL database servers, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\nEnabling Microsoft Defender for Azure SQL Databases allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.5",
+    "display_name": "Ensure That Microsoft Defender for SQL Servers on Machines Is Set To 'On'",
+    "description": "Turning on Microsoft Defender for SQL servers on machines enables threat detection for SQL servers on machines, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\nEnabling Microsoft Defender for SQL servers on machines allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.6",
+    "display_name": "Ensure That Microsoft Defender for Open-Source Relational Databases Is Set To 'On'",
+    "description": "Turning on Microsoft Defender for Open-source relational databases enables threat detection for Open-source relational databases, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\nEnabling Microsoft Defender for Open-source relational databases allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.7",
+    "display_name": "Ensure That Microsoft Defender for Storage Is Set To 'On'",
+    "description": "Turning on Microsoft Defender for Storage enables threat detection for Storage, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\nEnabling Microsoft Defender for Storage allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.8",
+    "display_name": "Ensure That Microsoft Defender for Containers Is Set To 'On'",
+    "description": "Turning on Microsoft Defender for Containers enables threat detection for Container Registries including Kubernetes, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\nEnabling Microsoft Defender for Container Registries allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.9",
+    "display_name": "Ensure That Microsoft Defender for Azure Cosmos DB Is Set To 'On'",
+    "description": "Microsoft Defender for Azure Cosmos DB scans all incoming network requests for threats to your Azure Cosmos DB resources.\nIn scanning Azure Cosmos DB requests within a subscription, requests are compared to a heuristic list of potential security threats. These threats could be a result of a security breach within your services, thus scanning for them could prevent a potential security threat from being introduced.",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.10",
+    "display_name": "Ensure That Microsoft Defender for Key Vault Is Set To 'On'",
+    "description": "Turning on Microsoft Defender for Key Vault enables threat detection for Key Vault, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\nEnabling Microsoft Defender for Key Vault allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.12",
+    "display_name": "Ensure That Microsoft Defender for Resource Manager Is Set To 'On'",
+    "description": "Microsoft Defender for Resource Manager scans incoming administrative requests to change your infrastructure from both CLI and the Azure portal.\nScanning resource requests lets you be alerted every time there is suspicious activity in order to prevent a security threat from being introduced.",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.13",
+    "display_name": "Ensure that Microsoft Defender Recommendation for 'Apply system updates' status is 'Completed'",
+    "description": "Ensure that the latest OS patches for all virtual machines are applied.\nWindows and Linux virtual machines should be kept updated to: \n- Address a specific bug or flaw\n- Improve an OS or application’s general stability\n- Fix a security vulnerability\n\nThe Azure Security Center retrieves a list of available security and critical updates from Windows Update or Windows Server Update Services (WSUS), depending on which service is configured on a Windows VM. The security center also checks for the latest updates in Linux systems. If a VM is missing a system update, the security center will recommend system updates be applied.",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.17",
+    "display_name": "Ensure that Auto provisioning of 'Microsoft Defender for Containers components' is Set to 'On'",
+    "description": "Enable automatic provisioning of the Microsoft Defender for Containers components.\nAs with any compute resource, Container environments require hardening and run-time protection to ensure safe operations and detection of threats and vulnerabilities.",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.19",
+    "display_name": "Ensure 'Additional email addresses' is Configured with a Security Contact Email",
+    "description": "Microsoft Defender for Cloud emails the subscription owners whenever a high-severity alert is triggered for their subscription. You should provide a security contact email address as an additional email address.\nMicrosoft Defender for Cloud emails the Subscription Owner to notify them about security alerts. Adding your Security Contact's email address to the 'Additional email addresses' field ensures that your organization's Security Team is included in these alerts. This ensures that the proper people are aware of any potential compromise in order to mitigate the risk in a timely fashion.",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_2.1.20",
+    "display_name": "Ensure That 'Notify about alerts with the following severity' is Set to 'High'",
+    "description": "Enables emailing security alerts to the subscription owner or other designated security contact.\nEnabling security alert emails ensures that security alert emails are received from Microsoft. This ensures that the right people are aware of any potential security issues and are able to mitigate the risk.",
+    "category": "2.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_3.1",
+    "display_name": "Ensure that 'Secure transfer required' is set to 'Enabled'",
+    "description": "Enable data encryption in transit.\nThe secure transfer option enhances the security of a storage account by only allowing requests to the storage account by a secure connection. For example, when calling REST APIs to access storage accounts, the connection must use HTTPS. Any requests using HTTP will be rejected when 'secure transfer required' is enabled. When using the Azure files service, connection without encryption will fail, including scenarios using SMB 2.1, SMB 3.0 without encryption, and some flavors of the Linux SMB client. Because Azure storage doesn’t support HTTPS for custom domain names, this option is not applied when using a custom domain name.",
+    "category": "3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_3.2",
+    "display_name": "Ensure that ‘Enable Infrastructure Encryption’ for Each Storage Account in Azure Storage is Set to ‘enabled’",
+    "description": "Enabling encryption at the hardware level on top of the default software encryption for Storage Accounts accessing Azure storage solutions.\nAzure Storage automatically encrypts all data in a storage account at the network level using 256-bit AES encryption, which is one of the strongest, FIPS 140-2-compliant block ciphers available. Customers who require higher levels of assurance that their data is secure can also enable 256-bit AES encryption at the Azure Storage infrastructure level for double encryption. Double encryption of Azure Storage data protects against a scenario where one of the encryption algorithms or keys may be compromised. Similarly, data is encrypted even before network transmission and in all backups. In this scenario, the additional layer of encryption continues to protect your data. For the most secure implementation of key based encryption, it is recommended to use a Customer Managed asymmetric RSA 2048 Key in Azure Key Vault.",
+    "category": "3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_3.7",
+    "display_name": "Ensure that 'Public access level' is disabled for storage accounts with blob containers",
+    "description": "Disallowing public access for a storage account overrides the public access settings for individual containers in that storage account.\nThe default configuration for a storage account permits a user with appropriate permissions to configure public (anonymous) access to containers and blobs in a storage account. Keep in mind that public access to a container is always turned off by default and must be explicitly configured to permit anonymous requests. It grants read-only access to these resources without sharing the account key, and without requiring a shared access signature.\nIt is recommended not to provide anonymous access to blob containers until, and unless, it is strongly desired. A shared access signature token or Azure AD RBAC should be used for providing controlled and timed access to blob containers.\nIf no anonymous access is needed on any container in the storage account, it’s recommended to set allowBlobPublicAccess false at the account level, which forbids any container to accept anonymous access in the future.",
+    "category": "3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_3.8",
+    "display_name": "Ensure Default Network Access Rule for Storage Accounts is Set to Deny",
+    "description": "Restricting default network access helps to provide a new layer of security, since storage accounts accept connections from clients on any network. To limit access to selected networks, the default action must be changed.\nStorage accounts should be configured to deny access to traffic from all networks (including internet traffic). Access can be granted to traffic from specific Azure Virtual networks, allowing a secure network boundary for specific applications to be built. Access can also be granted to public internet IP address ranges to enable connections from specific internet or on-premises clients. When network rules are configured, only applications from allowed networks can access a storage account. When calling from an allowed network, applications continue to require proper authorization (a valid access key or SAS token) to access the storage account.",
+    "category": "3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_3.9",
+    "display_name": "Ensure 'Allow Azure services on the trusted services list to access this storage account' is Enabled for Storage Account Access",
+    "description": "Some Azure services that interact with storage accounts operate from networks that can't be granted access through network rules. To help this type of service work as intended, allow the set of trusted Azure services to bypass the network rules. These services will then use strong authentication to access the storage account. If the Allow trusted Azure services exception is enabled, the following services are granted access to the storage account: Azure Backup, Azure Site Recovery, Azure DevTest Labs, Azure Event Grid, Azure Event Hubs, Azure Networking, Azure Monitor, and Azure SQL Data Warehouse (when registered in the subscription).\nTurning on firewall rules for storage account will block access to incoming requests for data, including from other Azure services. We can re-enable this functionality by enabling `\"Trusted Azure Services\"` through networking exceptions.",
+    "category": "3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_3.10",
+    "display_name": "Ensure Private Endpoints are used to access Storage Accounts",
+    "description": "Use private endpoints for your Azure Storage accounts to allow clients and services to securely access data located over a network via an encrypted Private Link. To do this, the private endpoint uses an IP address from the VNet for each service. Network traffic between disparate services securely traverses encrypted over the VNet. This VNet can also link addressing space, extending your network and accessing resources on it. Similarly, it can be a tunnel through public networks to connect remote infrastructures together. This creates further security through segmenting network traffic and preventing outside sources from accessing it.\nSecuring traffic between services through encryption protects the data from easy interception and reading.",
+    "category": "3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_3.12",
+    "display_name": "Ensure Storage for Critical Data are Encrypted with Customer Managed Keys",
+    "description": "Enable sensitive data encryption at rest using Customer Managed Keys rather than Microsoft Managed keys.\nBy default, data in the storage account is encrypted using Microsoft Managed Keys at rest. All Azure Storage resources are encrypted, including blobs, disks, files, queues, and tables. All object metadata is also encrypted. If you want to control and manage this encryption key yourself, however, you can specify a customer-managed key. That key is used to protect and control access to the key that encrypts your data. You can also choose to automatically update the key version used for Azure Storage encryption whenever a new version is available in the associated Key Vault.",
+    "category": "3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_3.15",
+    "display_name": "Ensure the \"Minimum TLS version\" for storage accounts is set to \"Version 1.2\"",
+    "description": "In some cases, Azure Storage sets the minimum TLS version to be version 1.0 by default. TLS 1.0 is a legacy version and has known vulnerabilities. This minimum TLS version can be configured to be later protocols such as TLS 1.2.\nTLS 1.0 has known vulnerabilities and has been replaced by later versions of the TLS protocol. Continued use of this legacy protocol affects the security of data in transit.",
+    "category": "3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.1.1",
+    "display_name": "Ensure that 'Auditing' is set to 'On'",
+    "description": "Enable auditing on SQL Servers.\nThe Azure platform allows a SQL server to be created as a service. Enabling auditing at the server level ensures that all existing and newly created databases on the SQL server instance are audited. \nAuditing policy applied on the SQL database does not override auditing policy and settings applied on the particular SQL server where the database is hosted.\n\nAuditing tracks database events and writes them to an audit log in the Azure storage account. It also helps to maintain regulatory compliance, understand database activity, and gain insight into discrepancies and anomalies that could indicate business concerns or suspected security violations.",
+    "category": "4.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.1.2",
+    "display_name": "Ensure no Azure SQL Databases allow ingress from 0.0.0.0/0 (ANY IP)",
+    "description": "Ensure that no SQL Databases allow ingress from 0.0.0.0/0 (ANY IP).\nAzure SQL Server includes a firewall to block access to unauthorized connections. More granular IP addresses can be defined by referencing the range of addresses available from specific datacenters.\n\nBy default, for a SQL server, a Firewall exists with StartIp of 0.0.0.0 and EndIP of 0.0.0.0 allowing access to all the Azure services. \n\nAdditionally, a custom rule can be set up with StartIp of 0.0.0.0 and EndIP of 255.255.255.255 allowing access from ANY IP over the Internet.\n\nIn order to reduce the potential attack surface for a SQL server, firewall rules should be defined with more granular IP addresses by referencing the range of addresses available from specific datacenters.",
+    "category": "4.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.1.3",
+    "display_name": "Ensure SQL server's Transparent Data Encryption (TDE) protector is encrypted with Customer-managed key",
+    "description": "Transparent Data Encryption (TDE) with Customer-managed key support provides increased transparency and control over the TDE Protector, increased security with an HSM-backed external service, and promotion of separation of duties.\n\nWith TDE, data is encrypted at rest with a symmetric key (called the database encryption key) stored in the database or data warehouse distribution. To protect this data encryption key (DEK) in the past, only a certificate that the Azure SQL Service managed could be used. Now, with Customer-managed key support for TDE, the DEK can be protected with an asymmetric key that is stored in the Azure Key Vault. The Azure Key Vault is a highly available and scalable cloud-based key store which offers central key management, leverages FIPS 140-2 Level 2 validated hardware security modules (HSMs), and allows separation of management of keys and data for additional security.\n\nBased on business needs or criticality of data/databases hosted on a SQL server, it is recommended that the TDE protector is encrypted by a key that is managed by the data owner (Customer-managed key).\nCustomer-managed key support for Transparent Data Encryption (TDE) allows user control of TDE encryption keys and restricts who can access them and when. Azure Key Vault, Azure’s cloud-based external key management system, is the first key management service where TDE has integrated support for Customer-managed keys. With Customer-managed key support, the database encryption key is protected by an asymmetric key stored in the Key Vault. The asymmetric key is set at the server level and inherited by all databases under that server.",
+    "category": "4.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.1.4",
+    "display_name": "Ensure that Azure Active Directory Admin is Configured for SQL Servers",
+    "description": "Use Azure Active Directory Authentication for authentication with SQL Database to manage credentials in a single place.\nAzure Active Directory authentication is a mechanism to connect to Microsoft Azure SQL Database and SQL Data Warehouse by using identities in Azure Active Directory (Azure AD). With Azure AD authentication, identities of database users and other Microsoft services can be managed in one central location. Central ID management provides a single place to manage database users and simplifies permission management.\n\n- It provides an alternative to SQL Server authentication.\n- Helps stop the proliferation of user identities across database servers.\n- Allows password rotation in a single place.\n- Customers can manage database permissions using external (AAD) groups.\n- It can eliminate storing passwords by enabling integrated Windows authentication and other forms of authentication supported by Azure Active Directory.\n- Azure AD authentication uses contained database users to authenticate identities at the database level.\n- Azure AD supports token-based authentication for applications connecting to SQL Database.\n- Azure AD authentication supports ADFS (domain federation) or native user/password authentication for a local Azure Active Directory without domain synchronization.\n- Azure AD supports connections from SQL Server Management Studio that use Active Directory Universal Authentication, which includes Multi-Factor Authentication (MFA). MFA includes strong authentication with a range of easy verification options — phone call, text message, smart cards with pin, or mobile app notification.",
+    "category": "4.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.1.5",
+    "display_name": "Ensure that 'Data encryption' is set to 'On' on a SQL Database",
+    "description": "Enable Transparent Data Encryption on every SQL server.\nAzure SQL Database transparent data encryption helps protect against the threat of malicious activity by performing real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application.",
+    "category": "4.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.1.6",
+    "display_name": "Ensure that 'Auditing' Retention is 'greater than 90 days'",
+    "description": "SQL Server Audit Retention should be configured to be greater than 90 days.\nAudit Logs can be used to check for anomalies and give insight into suspected breaches or misuse of information and access.",
+    "category": "4.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.2.1",
+    "display_name": "Ensure that Microsoft Defender for SQL is set to 'On' for critical SQL Servers",
+    "description": "Enable \"Microsoft Defender for SQL\" on critical SQL Servers.\nMicrosoft Defender for SQL is a unified package for advanced SQL security capabilities. Microsoft Defender is available for Azure SQL Database, Azure SQL Managed Instance, and Azure Synapse Analytics. It includes functionality for discovering and classifying sensitive data, surfacing and mitigating potential database vulnerabilities, and detecting anomalous activities that could indicate a threat to your database. It provides a single go-to location for enabling and managing these capabilities.",
+    "category": "4.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.2.2",
+    "display_name": "Ensure that Vulnerability Assessment (VA) is enabled on a SQL server by setting a Storage Account",
+    "description": "Enable Vulnerability Assessment (VA) service scans for critical SQL servers and corresponding SQL databases.\nEnabling Microsoft Defender for SQL server does not enables Vulnerability Assessment capability for individual SQL databases unless storage account is set to store the scanning data and reports.\n\nThe Vulnerability Assessment service scans databases for known security vulnerabilities and highlights deviations from best practices, such as misconfigurations, excessive permissions, and unprotected sensitive data. \nResults of the scan include actionable steps to resolve each issue and provide customized remediation scripts where applicable. Additionally, an assessment report can be customized by setting an acceptable baseline for permission configurations, feature configurations, and database settings.",
+    "category": "4.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.2.3",
+    "display_name": "Ensure that Vulnerability Assessment (VA) setting 'Periodic recurring scans' is set to 'on' for each SQL server",
+    "description": "Enable Vulnerability Assessment (VA) Periodic recurring scans for critical SQL servers and corresponding SQL databases.\nVA setting 'Periodic recurring scans' schedules periodic (weekly) vulnerability scanning for the SQL server and corresponding Databases.\nPeriodic and regular vulnerability scanning provides risk visibility based on updated known vulnerability signatures and best practices.",
+    "category": "4.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.2.4",
+    "display_name": "Ensure that Vulnerability Assessment (VA) setting 'Send scan reports to' is configured for a SQL server",
+    "description": "Configure 'Send scan reports to' with email addresses of concerned data owners/stakeholders for a critical SQL servers.\nVulnerability Assessment (VA) scan reports and alerts will be sent to email addresses configured at 'Send scan reports to'. This may help in reducing time required for identifying risks and taking corrective measures.",
+    "category": "4.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.2.5",
+    "display_name": "Ensure that Vulnerability Assessment (VA) setting 'Also send email notifications to admins and subscription owners' is set for each SQL Server",
+    "description": "Enable Vulnerability Assessment (VA) setting 'Also send email notifications to admins and subscription owners'.\nVA scan reports and alerts will be sent to admins and subscription owners by enabling setting 'Also send email notifications to admins and subscription owners'. This may help in reducing time required for identifying risks and taking corrective measures.",
+    "category": "4.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.3.1",
+    "display_name": "Ensure 'Enforce SSL connection' is set to 'ENABLED' for PostgreSQL Database Server",
+    "description": "Enable `SSL connection` on `PostgreSQL` Servers.\n`SSL connectivity` helps to provide a new layer of security by connecting database server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between database server and client applications helps protect against \"man in the middle\" attacks by encrypting the data stream between the server and application.",
+    "category": "4.3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.3.2",
+    "display_name": "Ensure Server Parameter 'log_checkpoints' is set to 'ON' for PostgreSQL Database Server",
+    "description": "Enable `log_checkpoints` on `PostgreSQL Servers`.\nEnabling `log_checkpoints` helps the PostgreSQL Database to `Log each checkpoint` in turn generates query and error logs. However, access to transaction logs is not supported. Query and error logs can be used to identify, troubleshoot, and repair configuration errors and sub-optimal performance.",
+    "category": "4.3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.3.3",
+    "display_name": "Ensure server parameter 'log_connections' is set to 'ON' for PostgreSQL Database Server",
+    "description": "Enable `log_connections` on `PostgreSQL Servers`.\nEnabling `log_connections` helps PostgreSQL Database to log attempted connection to the server, as well as successful completion of client authentication. Log data can be used to identify, troubleshoot, and repair configuration errors and suboptimal performance.",
+    "category": "4.3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.3.4",
+    "display_name": "Ensure server parameter 'log_disconnections' is set to 'ON' for PostgreSQL Database Server",
+    "description": "Enable `log_disconnections` on `PostgreSQL Servers`.\nEnabling `log_disconnections` helps PostgreSQL Database to `Logs end of a session`, including duration, which in turn generates query and error logs. Query and error logs can be used to identify, troubleshoot, and repair configuration errors and sub-optimal performance.",
+    "category": "4.3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.3.5",
+    "display_name": "Ensure server parameter 'connection_throttling' is set to 'ON' for PostgreSQL Database Server",
+    "description": "Enable `connection_throttling` on `PostgreSQL Servers`.\nEnabling `connection_throttling` helps the PostgreSQL Database to `Set the verbosity of logged messages`. This in turn generates query and error logs with respect to concurrent connections that could lead to a successful Denial of Service (DoS) attack by exhausting connection resources. A system can also fail or be degraded by an overload of legitimate users. Query and error logs can be used to identify, troubleshoot, and repair configuration errors and sub-optimal performance.",
+    "category": "4.3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.3.7",
+    "display_name": "Ensure 'Allow access to Azure services' for PostgreSQL Database Server is disabled",
+    "description": "Disable access from Azure services to PostgreSQL Database Server.\nIf access from Azure services is enabled, the server's firewall will accept connections from all Azure resources, including resources not in your subscription. This is usually not a desired configuration. Instead, set up firewall rules to allow access from specific network ranges or VNET rules to allow access from specific virtual networks.",
+    "category": "4.3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.3.8",
+    "display_name": "Ensure 'Infrastructure double encryption' for PostgreSQL Database Server is 'Enabled'",
+    "description": "Azure Database for PostgreSQL servers should be created with 'infrastructure double encryption' enabled.\nIf Double Encryption is enabled, another layer of encryption is implemented at the hardware level before the storage or network level. Information will be encrypted before it is even accessed, preventing both interception of data in motion if the network layer encryption is broken and data at rest in system resources such as memory or processor cache. Encryption will also be in place for any backups taken of the database, so the key will secure access the data in all forms. For the most secure implementation of key based encryption, it is recommended to use a Customer Managed asymmetric RSA 2048 Key in Azure Key Vault.",
+    "category": "4.3"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.4.1",
+    "display_name": "Ensure 'Enforce SSL connection' is set to 'Enabled' for Standard MySQL Database Server",
+    "description": "Enable `SSL connection` on `MYSQL` Servers.\nSSL connectivity helps to provide a new layer of security by connecting database server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between database server and client applications helps protect against \"man in the middle\" attacks by encrypting the data stream between the server and application.",
+    "category": "4.4"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.5.1",
+    "display_name": "Ensure That 'Firewalls & Networks' Is Limited to Use Selected Networks Instead of All Networks",
+    "description": "Limiting your Cosmos DB to only communicate on whitelisted networks lowers its attack footprint.\nSelecting certain networks for your Cosmos DB to communicate restricts the number of networks including the internet that can interact with what is stored within the database.",
+    "category": "4.5"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.5.2",
+    "display_name": "Ensure That Private Endpoints Are Used Where Possible",
+    "description": "Private endpoints limit network traffic to approved sources.\nFor sensitive data, private endpoints allow granular control of which services can communicate with Cosmos DB and ensure that this network traffic is private. You set this up on a case by case basis for each service you wish to be connected.",
+    "category": "4.5"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_4.5.3",
+    "display_name": "Use Azure Active Directory (AAD) Client Authentication and Azure RBAC where possible.",
+    "description": "Cosmos DB can use tokens or AAD for client authentication which in turn will use Azure RBAC for authorization. Using AAD is significantly more secure because AAD handles the credentials and allows for MFA and centralized management, and the Azure RBAC better integrated with the rest of Azure.\nAAD client authentication is considerably more secure than token-based authentication because the tokens must be persistent at the client. AAD does not require this.",
+    "category": "4.5"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.1.2",
+    "display_name": "Ensure Diagnostic Setting captures appropriate categories",
+    "description": "**Prerequisite**: A Diagnostic Setting must exist. If a Diagnostic Setting does not exist, the navigation and options within this recommendation will not be available. Please review the recommendation at the beginning of this subsection titled: \"Ensure that a 'Diagnostic Setting' exists.\"\n\nThe diagnostic setting should be configured to log the appropriate activities from the control/management plane.\nA diagnostic setting controls how the diagnostic log is exported. Capturing the diagnostic setting categories for appropriate control/management plane activities allows proper alerting.",
+    "category": "5.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.1.3",
+    "display_name": "Ensure the Storage Container Storing the Activity Logs is not Publicly Accessible",
+    "description": "The storage account container containing the activity log export should not be publicly accessible.\nAllowing public access to activity log content may aid an adversary in identifying weaknesses in the affected account's use or configuration.",
+    "category": "5.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.1.4",
+    "display_name": "Ensure the storage account containing the container with activity logs is encrypted with Customer Managed Key",
+    "description": "Storage accounts with the activity log exports can be configured to use Customer Managed Keys (CMK).\nConfiguring the storage account with the activity log export container to use CMKs provides additional confidentiality controls on log data, as a given user must have read permission on the corresponding storage account and must be granted decrypt permission by the CMK.",
+    "category": "5.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.1.5",
+    "display_name": "Ensure that logging for Azure Key Vault is 'Enabled'",
+    "description": "Enable AuditEvent logging for key vault instances to ensure interactions with key vaults are logged and available.\nMonitoring how and when key vaults are accessed, and by whom, enables an audit trail of interactions with confidential information, keys, and certificates managed by Azure Keyvault. Enabling logging for Key Vault saves information in an Azure storage account which the user provides. This creates a new container named insights-logs-auditevent automatically for the specified storage account. This same storage account can be used for collecting logs for multiple key vaults.",
+    "category": "5.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.1.6",
+    "display_name": "Ensure that Network Security Group Flow logs are captured and sent to Log Analytics",
+    "description": "Ensure that network flow logs are captured and fed into a central log analytics workspace.\nNetwork Flow Logs provide valuable insight into the flow of traffic around your network and feed into both Azure Monitor and Azure Sentinel (if in use), permitting the generation of visual flow diagrams to aid with analyzing for lateral movement, etc.",
+    "category": "5.1"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.2.1",
+    "display_name": "Ensure that Activity Log Alert exists for Create Policy Assignment",
+    "description": "Create an activity log alert for the Create Policy Assignment event.\nMonitoring for create policy assignment events gives insight into changes done in \"Azure policy - assignments\" and can reduce the time it takes to detect unsolicited changes.",
+    "category": "5.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.2.2",
+    "display_name": "Ensure that Activity Log Alert exists for Delete Policy Assignment",
+    "description": "Create an activity log alert for the Delete Policy Assignment event.\nMonitoring for delete policy assignment events gives insight into changes done in \"azure policy - assignments\" and can reduce the time it takes to detect unsolicited changes.",
+    "category": "5.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.2.3",
+    "display_name": "Ensure that Activity Log Alert exists for Create or Update Network Security Group",
+    "description": "Create an Activity Log Alert for the Create or Update Network Security Group event.\nMonitoring for Create or Update Network Security Group events gives insight into network access changes and may reduce the time it takes to detect suspicious activity.",
+    "category": "5.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.2.4",
+    "display_name": "Ensure that Activity Log Alert exists for Delete Network Security Group",
+    "description": "Create an activity log alert for the Delete Network Security Group event.\nMonitoring for \"Delete Network Security Group\" events gives insight into network access changes and may reduce the time it takes to detect suspicious activity.",
+    "category": "5.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.2.5",
+    "display_name": "Ensure that Activity Log Alert exists for Create or Update Security Solution",
+    "description": "Create an activity log alert for the Create or Update Security Solution event.\nMonitoring for Create or Update Security Solution events gives insight into changes to the active security solutions and may reduce the time it takes to detect suspicious activity.",
+    "category": "5.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.2.6",
+    "display_name": "Ensure that Activity Log Alert exists for Delete Security Solution",
+    "description": "Create an activity log alert for the Delete Security Solution event.\nMonitoring for Delete Security Solution events gives insight into changes to the active security solutions and may reduce the time it takes to detect suspicious activity.",
+    "category": "5.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.2.7",
+    "display_name": "Ensure that Activity Log Alert exists for Create or Update SQL Server Firewall Rule",
+    "description": "Create an activity log alert for the Create or Update SQL Server Firewall Rule event.\nMonitoring for Create or Update SQL Server Firewall Rule events gives insight into network access changes and may reduce the time it takes to detect suspicious activity.",
+    "category": "5.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.2.8",
+    "display_name": "Ensure that Activity Log Alert exists for Delete SQL Server Firewall Rule",
+    "description": "Create an activity log alert for the \"Delete SQL Server Firewall Rule.\"\nMonitoring for Delete SQL Server Firewall Rule events gives insight into SQL network access changes and may reduce the time it takes to detect suspicious activity.",
+    "category": "5.2"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_5.4",
+    "display_name": "Ensure that Azure Monitor Resource Logging is Enabled for All Services that Support it",
+    "description": "Resource Logs capture activity to the data access plane while the Activity log is a subscription-level log for the control plane. Resource-level diagnostic logs provide insight into operations that were performed within that resource itself; for example, reading or updating a secret from a Key Vault. Currently, 95 Azure resources support Azure Monitoring (See the more information section for a complete list), including Network Security Groups, Load Balancers, Key Vault, AD, Logic Apps, and CosmosDB. The content of these logs varies by resource type.\n\nA number of back-end services were not configured to log and store Resource Logs for certain activities or for a sufficient length. It is crucial that monitoring is correctly configured to log all relevant activities and retain those logs for a sufficient length of time. Given that the mean time to detection in an enterprise is 240 days, a minimum retention period of two years is recommended.\nA lack of monitoring reduces the visibility into the data plane, and therefore an organization's ability to detect reconnaissance, authorization attempts or other malicious activity. Unlike Activity Logs, Resource Logs are not enabled by default. Specifically, without monitoring it would be impossible to tell which entities had accessed a data store that was breached. In addition, alerts for failed attempts to access APIs for Web Services or Databases are only possible when logging is enabled.",
+    "category": "5"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_6.1",
+    "display_name": "Ensure that RDP access from the Internet is evaluated and restricted",
+    "description": "Network security groups should be periodically evaluated for port misconfigurations. Where certain ports and protocols may be exposed to the Internet, they should be evaluated for necessity and restricted wherever they are not explicitly required.\nThe potential security problem with using RDP over the Internet is that attackers can use various brute force techniques to gain access to Azure Virtual Machines. Once the attackers gain access, they can use a virtual machine as a launch point for compromising other machines on an Azure Virtual Network or even attack networked devices outside of Azure.",
+    "category": "6"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_6.2",
+    "display_name": "Ensure that SSH access from the Internet is evaluated and restricted",
+    "description": "Network security groups should be periodically evaluated for port misconfigurations. Where certain ports and protocols may be exposed to the Internet, they should be evaluated for necessity and restricted wherever they are not explicitly required.\nThe potential security problem with using SSH over the Internet is that attackers can use various brute force techniques to gain access to Azure Virtual Machines. Once the attackers gain access, they can use a virtual machine as a launch point for compromising other machines on the Azure Virtual Network or even attack networked devices outside of Azure.",
+    "category": "6"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_6.6",
+    "display_name": "Ensure that Network Watcher is 'Enabled'",
+    "description": "Enable Network Watcher for Azure subscriptions.\nNetwork diagnostic and visualization tools available with Network Watcher help users understand, diagnose, and gain insights to the network in Azure.",
+    "category": "6"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_7.2",
+    "display_name": "Ensure Virtual Machines are utilizing Managed Disks",
+    "description": "Migrate blob-based VHDs to Managed Disks on Virtual Machines to exploit the default features of this configuration.\nThe features include: \n1) Default Disk Encryption\n2) Resilience, as Microsoft will managed the disk storage and move around if underlying hardware goes faulty\n3) Reduction of costs over storage accounts\nManaged disks are by default encrypted on the underlying hardware, so no additional encryption is required for basic protection. It is available if additional encryption is required.\nManaged disks are by design more resilient that storage accounts.\n\nFor ARM-deployed Virtual Machines, Azure Adviser will at some point recommend moving VHDs to managed disks both from a security and cost management perspective.",
+    "category": "7"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_7.4",
+    "display_name": "Ensure that 'Unattached disks' are encrypted with 'Customer Managed Key' (CMK)",
+    "description": "Ensure that unattached disks in a subscription are encrypted with a Customer Managed Key (CMK).\nManaged disks are encrypted by default with Platform-managed keys. Using Customer-managed keys may provide an additional level of security or meet an organization's regulatory requirements. Encrypting managed disks ensures that its entire content is fully unrecoverable without a key and thus protects the volume from unwarranted reads. \nEven if the disk is not attached to any of the VMs, there is always a risk where a compromised user account with administrative access to VM service can mount/attach these data disks, which may lead to sensitive information disclosure and tampering.",
+    "category": "7"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_7.5",
+    "display_name": "Ensure that Only Approved Extensions Are Installed",
+    "description": "For added security, only install organization-approved extensions on VMs.\nAzure virtual machine extensions are small applications that provide post-deployment configuration and automation tasks on Azure virtual machines. These extensions run with administrative privileges and could potentially access anything on a virtual machine. The Azure Portal and community provide several such extensions. Each organization should carefully evaluate these extensions and ensure that only those that are approved for use are actually implemented.",
+    "category": "7"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_8.1",
+    "display_name": "Ensure that the Expiration Date is set for all Keys in RBAC Key Vaults",
+    "description": "Ensure that all Keys in Role Based Access Control (RBAC) Azure Key Vaults have an expiration date set.\nAzure Key Vault enables users to store and use cryptographic keys within the Microsoft Azure environment. The `exp` (expiration date) attribute identifies the expiration date on or after which the key MUST NOT be used for encryption of new data, wrapping of new keys, and signing. By default, keys never expire. It is thus recommended that keys be rotated in the key vault and set an explicit expiration date for all keys to help enforce the key rotation. This ensures that the keys cannot be used beyond their assigned lifetimes.",
+    "category": "8"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_8.2",
+    "display_name": "Ensure that the Expiration Date is set for all Keys in Non-RBAC Key Vaults.",
+    "description": "Ensure that all Keys in Non Role Based Access Control (RBAC) Azure Key Vaults have an expiration date set.\nAzure Key Vault enables users to store and use cryptographic keys within the Microsoft Azure environment. The `exp` (expiration date) attribute identifies the expiration date on or after which the key MUST NOT be used for a cryptographic operation. By default, keys never expire. It is thus recommended that keys be rotated in the key vault and set an explicit expiration date for all keys. This ensures that the keys cannot be used beyond their assigned lifetimes.",
+    "category": "8"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_8.3",
+    "display_name": "Ensure that the Expiration Date is set for all Secrets in RBAC Key Vaults",
+    "description": "Ensure that all Secrets in Role Based Access Control (RBAC) Azure Key Vaults have an expiration date set.\nThe Azure Key Vault enables users to store and keep secrets within the Microsoft Azure environment. Secrets in the Azure Key Vault are octet sequences with a maximum size of 25k bytes each. The `exp` (expiration date) attribute identifies the expiration date on or after which the secret MUST NOT be used. By default, secrets never expire. It is thus recommended to rotate secrets in the key vault and set an explicit expiration date for all secrets. This ensures that the secrets cannot be used beyond their assigned lifetimes.",
+    "category": "8"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_8.4",
+    "display_name": "Ensure that the Expiration Date is set for all Secrets in Non-RBAC Key Vaults",
+    "description": "Ensure that all Secrets in Non Role Based Access Control (RBAC) Azure Key Vaults have an expiration date set.\nThe Azure Key Vault enables users to store and keep secrets within the Microsoft Azure environment. Secrets in the Azure Key Vault are octet sequences with a maximum size of 25k bytes each. The `exp` (expiration date) attribute identifies the expiration date on or after which the secret MUST NOT be used. By default, secrets never expire. It is thus recommended to rotate secrets in the key vault and set an explicit expiration date for all secrets. This ensures that the secrets cannot be used beyond their assigned lifetimes.",
+    "category": "8"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_8.5",
+    "display_name": "Ensure the Key Vault is Recoverable",
+    "description": "The Key Vault contains object keys, secrets, and certificates. Accidental unavailability of a Key Vault can cause immediate data loss or loss of security functions (authentication, validation, verification, non-repudiation, etc.) supported by the Key Vault objects.\n\nIt is recommended the Key Vault be made recoverable by enabling the \"Do Not Purge\" and \"Soft Delete\" functions. This is in order to prevent loss of encrypted data, including storage accounts, SQL databases, and/or dependent services provided by Key Vault objects (Keys, Secrets, Certificates) etc. This may happen in the case of accidental deletion by a user or from disruptive activity by a malicious user.\n\nWARNING: A current limitation of the soft-delete feature across all Azure services is role assignments disappearing when Key Vault is deleted. All role assignments will need to be recreated after recovery.\nThere could be scenarios where users accidentally run delete/purge commands on Key Vault or an attacker/malicious user deliberately does so in order to cause disruption.\nDeleting or purging a Key Vault leads to immediate data loss, as keys encrypting data and secrets/certificates allowing access/services will become non-accessible.\nThere are 2 Key Vault properties that play a role in permanent unavailability of a Key Vault:\n\n1. `enableSoftDelete`: \n\nSetting this parameter to \"true\" for a Key Vault ensures that even if Key Vault is deleted, Key Vault itself or its objects remain recoverable for the next 90 days. Key Vault/objects can either be recovered or purged (permanent deletion) during those 90 days. If no action is taken, key vault and its objects will subsequently be purged.\n\n2. `enablePurgeProtection`: \n\nenableSoftDelete only ensures that Key Vault is not deleted permanently and will be recoverable for 90 days from date of deletion. However, there are scenarios in which the Key Vault and/or its objects are accidentally purged and hence will not be recoverable. Setting enablePurgeProtection to \"true\" ensures that the Key Vault and its objects cannot ",
+    "category": "8"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_8.6",
+    "display_name": "Enable Role Based Access Control for Azure Key Vault",
+    "description": "WARNING: Role assignments disappear when a Key Vault has been deleted (soft-delete) and recovered. Afterwards it will be required to recreate all role assignments. This is a limitation of the soft-delete feature across all Azure services.\nThe new RBAC permissions model for Key Vaults enables a much finer grained access control for key vault secrets, keys, certificates, etc., than the vault access policy. This in turn will permit the use of privileged identity management over these roles, thus securing the key vaults with JIT Access management.",
+    "category": "8"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_8.7",
+    "display_name": "Ensure that Private Endpoints are Used for Azure Key Vault",
+    "description": "Private endpoints will secure network traffic from Azure Key Vault to the resources requesting secrets and keys.\nPrivate endpoints will keep network requests to Azure Key Vault limited to the endpoints attached to the resources that are whitelisted to communicate with each other. Assigning the Key Vault to a network without an endpoint will allow other resources on that network to view all traffic from the Key Vault to its destination. In spite of the complexity in configuration, this is recommended for high security secrets.",
+    "category": "8"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_8.8",
+    "display_name": "Ensure Automatic Key Rotation is Enabled Within Azure Key Vault for the Supported Services",
+    "description": "Automatic Key Rotation is available in Public Preview. The currently supported applications are Key Vault, Managed Disks, and Storage accounts accessing keys within Key Vault. The number of supported applications will incrementally increased.\nOnce set up, Automatic Private Key Rotation removes the need for manual administration when keys expire at intervals determined by your organization's policy. The recommended key lifetime is 2 years. Your organization should determine its own key expiration policy.",
+    "category": "8"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.1",
+    "display_name": "Ensure App Service Authentication is set up for apps in Azure App Service",
+    "description": "Azure App Service Authentication is a feature that can prevent anonymous HTTP requests from reaching a Web Application or authenticate those with tokens before they reach the app. If an anonymous request is received from a browser, App Service will redirect to a logon page. To handle the logon process, a choice from a set of identity providers can be made, or a custom authentication mechanism can be implemented.\nBy Enabling App Service Authentication, every incoming HTTP request passes through it before being handled by the application code. It also handles authentication of users with the specified provider (Azure Active Directory, Facebook, Google, Microsoft Account, and Twitter), validation, storing and refreshing of tokens, managing the authenticated sessions and injecting identity information into request headers.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.2",
+    "display_name": "Ensure Web App Redirects All HTTP traffic to HTTPS in Azure App Service",
+    "description": "Azure Web Apps allows sites to run under both HTTP and HTTPS by default. Web apps can be accessed by anyone using non-secure HTTP links by default. \nNon-secure HTTP requests can be restricted and all HTTP requests redirected to the secure HTTPS port. It is recommended to enforce HTTPS-only traffic.\nEnabling HTTPS-only traffic will redirect all non-secure HTTP requests to HTTPS ports. HTTPS uses the TLS/SSL protocol to provide a secure connection which is both encrypted and authenticated. It is therefore important to support HTTPS for the security benefits.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.3",
+    "display_name": "Ensure Web App is using the latest version of TLS encryption",
+    "description": "The TLS (Transport Layer Security) protocol secures transmission of data over the internet using standard encryption technology. Encryption should be set with the latest version of TLS. App service allows TLS 1.2 by default, which is the recommended TLS level by industry standards such as PCI DSS.\nApp service currently allows the web app to set TLS versions 1.0, 1.1 and 1.2. It is highly recommended to use the latest TLS 1.2 version for web app secure connections.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.4",
+    "display_name": "Ensure the web app has 'Client Certificates (Incoming client certificates)' set to 'On'",
+    "description": "Client certificates allow for the app to request a certificate for incoming requests. Only clients that have a valid certificate will be able to reach the app.\nThe TLS mutual authentication technique in enterprise environments ensures the authenticity of clients to the server. If incoming client certificates are enabled, then only an authenticated client who has valid certificates can access the app.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.5",
+    "display_name": "Ensure that Register with Azure Active Directory is enabled on App Service",
+    "description": "Managed service identity in App Service provides more security by eliminating secrets from the app, such as credentials in the connection strings. When registering with Azure Active Directory in App Service, the app will connect to other Azure services securely without the need for usernames and passwords.\nApp Service provides a highly scalable, self-patching web hosting service in Azure. It also provides a managed identity for apps, which is a turn-key solution for securing access to Azure SQL Database and other Azure services.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.6",
+    "display_name": "Ensure That 'PHP version' is the Latest, If Used to Run the Web App",
+    "description": "Periodically newer versions are released for PHP software either due to security flaws or to include additional functionality. Using the latest PHP version for web apps is recommended in order to take advantage of security fixes, if any, and/or additional functionalities of the newer version.\nNewer versions may contain security enhancements and additional functionality. Using the latest software version is recommended in order to take advantage of enhancements and new capabilities. With each software installation, organizations need to determine if a given update meets their requirements. They must also verify the compatibility and support provided for any additional software against the update revision that is selected.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.7",
+    "display_name": "Ensure that 'Python version' is the Latest Stable Version, if Used to Run the Web App",
+    "description": "Periodically, newer versions are released for Python software either due to security flaws or to include additional functionality. Using the latest full Python version for web apps is recommended in order to take advantage of security fixes, if any, and/or additional functionalities of the newer version.\nNewer versions may contain security enhancements and additional functionality. Using the latest software version is recommended in order to take advantage of enhancements and new capabilities. With each software installation, organizations need to determine if a given update meets their requirements. They must also verify the compatibility and support provided for any additional software against the update revision that is selected. Using the latest full version will keep your stack secure to vulnerabilities and exploits.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.8",
+    "display_name": "Ensure that 'Java version' is the latest, if used to run the Web App",
+    "description": "Periodically, newer versions are released for Java software either due to security flaws or to include additional functionality. Using the latest Java version for web apps is recommended in order to take advantage of security fixes, if any, and/or new functionalities of the newer version.\nNewer versions may contain security enhancements and additional functionality. Using the latest software version is recommended in order to take advantage of enhancements and new capabilities. With each software installation, organizations need to determine if a given update meets their requirements. They must also verify the compatibility and support provided for any additional software against the update revision that is selected.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.9",
+    "display_name": "Ensure that 'HTTP Version' is the Latest, if Used to Run the Web App",
+    "description": "Periodically, newer versions are released for HTTP either due to security flaws or to include additional functionality. Using the latest HTTP version for web apps to take advantage of security fixes, if any, and/or new functionalities of the newer version.\nNewer versions may contain security enhancements and additional functionality. Using the latest version is recommended in order to take advantage of enhancements and new capabilities. With each software installation, organizations need to determine if a given update meets their requirements. They must also verify the compatibility and support provided for any additional software against the update revision that is selected.\n\nHTTP 2.0 has additional performance improvements on the head-of-line blocking problem of old HTTP version, header compression, and prioritization of requests. HTTP 2.0 no longer supports HTTP 1.1's chunked transfer encoding mechanism, as it provides its own, more efficient, mechanisms for data streaming.",
+    "category": "9"
+  },
+  {
+    "name": "CIS_Azure_2.0.0_9.10",
+    "display_name": "Ensure FTP deployments are Disabled",
+    "description": "By default, Azure Functions, Web, and API Services \ncan be deployed over FTP. If FTP is required for an\nessential deployment workflow, FTPS should be required\nfor FTP login for all App Service Apps and Functions.\nAzure FTP deployment endpoints are public. An attacker listening to traffic on a wifi network used by a remote employee or a corporate network could see login traffic in clear-text which would then grant them full control of the code base of the app or service. This finding is more severe if User Credentials for deployment are set at the subscription level rather than using the default Application Credentials which are unique per App.",
+    "category": "9"
+  }
+]

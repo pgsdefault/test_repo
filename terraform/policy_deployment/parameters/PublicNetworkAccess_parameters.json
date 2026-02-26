@@ -1,0 +1,17 @@
+{
+    "App Configuration should disable public network access": {
+        "effect": {
+            "value": "Audit"
+        }
+    },
+    "Azure Key Vault should disable public network access": {
+        "effect": {
+            "value": "Audit"
+        }
+    },
+    "Configure storage accounts to disable public network access": {
+        "effect": {
+            "value": "Modify"
+        }
+    }
+}

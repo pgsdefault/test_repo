@@ -1,0 +1,27 @@
+{
+    "Azure Key Vault should use RBAC permission model": {
+        "effect": {
+            "value": "Audit"
+        }
+    },
+    "App Configuration stores should have local authentication methods disabled": {
+        "effect": {
+            "value": "Audit"
+        }
+    },
+    "Users must authenticate with multi-factor authentication to create or update resources": {
+        "effect": {
+            "value": "Audit"
+        }
+    },
+    "Configure App Configuration stores to disable local authentication methods": {
+        "effect": {
+            "value": "Modify"
+        }
+    },
+    "Co-Administrator and Service Administrator roles should not be assigned .json": {
+        "effect": {
+            "value": "Deny"
+        }
+    }
+}
