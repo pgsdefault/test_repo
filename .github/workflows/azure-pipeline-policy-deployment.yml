@@ -43,7 +43,7 @@ jobs:
         working-directory: ${{ env.TF_ROOT }}
         run: |
           terraform init -input=false -upgrade \
-            -backend-config="key=policy_deployment.tfstate"
+            -backend-config="key=test_deployment.tfstate"
         env:
           TF_LOG: INFO
           TF_LOG_PATH: ${{ github.workspace }}/tf_init_policy.log
