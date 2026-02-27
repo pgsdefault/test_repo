@@ -42,7 +42,7 @@ jobs:
       - name: Terraform Init - Policy Deployment
         working-directory: ${{ env.TF_ROOT }}
         run: |
-          terraform init -input=false -upgrade \
+          terraform init -reconfigure -input=false -upgrade \
             -backend-config="key=test_deployment.tfstate"
         env:
           TF_LOG: INFO
