@@ -8,10 +8,6 @@ on:
     paths:
       - 'terraform/policy_deployment/**'
 
-permissions:
-  #id-token: write      # Required for OIDC
-  contents: read
-
 env:
   TF_VERSION: 1.6.0
   TF_ROOT: terraform/policy_deployment
@@ -25,7 +21,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # ==================== AZURE LOGIN ====================
+      # ==================== AZURE LOGIN (Client Secret) ====================
       - name: Azure Login
         uses: azure/login@v2
         with:

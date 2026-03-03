@@ -108,4 +108,3 @@ output "ZeroTrust_initiative" {
     }
   }
 }
-
