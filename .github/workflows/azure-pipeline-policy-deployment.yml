@@ -111,8 +111,12 @@ jobs:
 
       - name: Terraform Init
         working-directory: ${{ env.TF_ROOT }}
-        run: terraform init -reconfigure -upgrade -input=false \
-             -backend-config="key=test_deployment.tfstate"
+        run: |
+          terraform init \
+            -reconfigure \
+            -upgrade \
+            -input=false \
+            -backend-config="key=test_deployment.tfstate"
         env:
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
