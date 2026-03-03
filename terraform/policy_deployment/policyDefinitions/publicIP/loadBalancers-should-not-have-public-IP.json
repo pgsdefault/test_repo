@@ -1,6 +1,6 @@
 {
-    "name": "loadBalancers-should-not-have-public-IP-assigned",
-    "displayName": "loadBalancers-should-not-have-public-IP-assigned",
+    "name": "loadBalancers-should-not-have-public-IP",
+    "displayName": "lB-should-not-have-public-IP-assigned",
     "description": "Load Balancers should not have public IPs assigned",
     "policyType": "Custom",
     "mode": "All",

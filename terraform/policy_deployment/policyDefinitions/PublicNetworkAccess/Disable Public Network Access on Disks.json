@@ -1,6 +1,6 @@
 {
-  "name": "Disable-Public-Network-Access-on-Managed-Disks",
-  "displayName": "Disable Public Network Access on Managed Disks",
+  "name": "Disable-Public-Network-Access-on-Disks",
+  "displayName": "Disable Public Network Access on Disks",
   "description": "Disabling public network access improves security by ensuring that a managed disk isn't exposed on the public internet. Creating private endpoints can limit exposure of managed disks.",
   "policyType": "Custom",
   "mode": "All",
