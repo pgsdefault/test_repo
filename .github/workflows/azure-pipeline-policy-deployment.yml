@@ -140,3 +140,24 @@ jobs:
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== EXPORT STATE ====================
+      - name: Export Terraform State & Outputs
+        if: always()
+        working-directory: ${{ env.TF_ROOT }}
+        run: |
+          terraform state pull > ${{ github.workspace }}/policy_deployment.tfstate
+          terraform output -json > ${{ github.workspace }}/policy_deployment_outputs.json
+        env:
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+# ==================== UPLOAD ARTIFACTS ====================
+      - name: Upload Policy Deployment Outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Policy-Deployment-Outputs
+          path: policy_deployment_outputs.json
