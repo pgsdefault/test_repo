@@ -9,7 +9,7 @@ on:
       - 'terraform/policy_deployment/**'
 
 permissions:
-  id-token: write      # Required for OIDC
+  #id-token: write      # Required for OIDC
   contents: read
 
 env:
