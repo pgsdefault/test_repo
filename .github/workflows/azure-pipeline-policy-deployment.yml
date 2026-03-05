@@ -1,87 +1,3 @@
-# name: Azure Policy Deployment
-
-# on:
-#   push:
-#     branches:
-#       - main
-#       - develop
-#     paths:
-#       - 'terraform/policy_deployment/**'
-
-# env:
-#   TF_VERSION: 1.6.0
-#   TF_ROOT: terraform/policy_deployment
-
-# jobs:
-#   terraform:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       # ==================== CHECKOUT ====================
-#       - name: Checkout Repository
-#         uses: actions/checkout@v4
-
-#       # ==================== AZURE LOGIN (Client Secret) ====================
-#       - name: Azure Login
-#         uses: azure/login@v2
-#         with:
-#           auth-type: SERVICE_PRINCIPAL
-#           client-id: ${{ secrets.ARM_CLIENT_ID }}
-#           tenant-id: ${{ secrets.ARM_TENANT_ID }}
-#           subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-#           client-secret: ${{ secrets.ARM_CLIENT_SECRET }}
-
-#       # ==================== SETUP TERRAFORM ====================
-#       - name: Setup Terraform
-#         uses: hashicorp/setup-terraform@v3
-#         with:
-#           terraform_version: ${{ env.TF_VERSION }}
-
-#       - name: Verify Terraform Installation
-#         run: terraform --version
-
-#       # ==================== TERRAFORM INIT ====================
-#       - name: Terraform Init - Policy Deployment
-#         working-directory: ${{ env.TF_ROOT }}
-#         run: |
-#           terraform init -reconfigure -upgrade -input=false \
-#             -backend-config="key=test_deployment.tfstate"
-
-#       # ==================== TERRAFORM VALIDATE ====================
-#       - name: Terraform Validate - Policy Deployment
-#         working-directory: ${{ env.TF_ROOT }}
-#         run: terraform validate
-
-#       # ==================== TERRAFORM PLAN ====================
-#       - name: Terraform Plan - Policy Deployment
-#         working-directory: ${{ env.TF_ROOT }}
-#         run: |
-#           terraform plan -out=tfplan \
-#             -lock=true \
-#             -lock-timeout=10m \
-#             -input=false
-
-#       # ==================== TERRAFORM APPLY ====================
-#       - name: Terraform Apply - Policy Deployment
-#         working-directory: ${{ env.TF_ROOT }}
-#         run: terraform apply -auto-approve -lock=true tfplan
-
-#       # ==================== EXPORT STATE ====================
-#       - name: Export Terraform State & Outputs
-#         if: always()
-#         working-directory: ${{ env.TF_ROOT }}
-#         run: |
-#           terraform state pull > ${{ github.workspace }}/policy_deployment.tfstate
-#           terraform output -json > ${{ github.workspace }}/policy_deployment_outputs.json
-
-#       # ==================== UPLOAD ARTIFACTS ====================
-#       - name: Upload Policy Deployment Outputs
-#         if: always()
-#         uses: actions/upload-artifact@v4
-#         with:
-#           name: Policy-Deployment-Outputs
-#           path: policy_deployment_outputs.json
-
 name: Azure Policy Deployment
 
 on:
@@ -141,7 +57,6 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
 
-      # ==================== EXPORT STATE ====================
       - name: Export Terraform State & Outputs
         if: always()
         working-directory: ${{ env.TF_ROOT }}
@@ -154,7 +69,6 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
 
-# ==================== UPLOAD ARTIFACTS ====================
       - name: Upload Policy Deployment Outputs
         if: always()
         uses: actions/upload-artifact@v4

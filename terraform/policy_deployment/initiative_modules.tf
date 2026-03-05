@@ -88,21 +88,17 @@ module "initiative_assignment" {
 #   }
 # }
 
-# resource "azurerm_subscription_policy_assignment" "nist_assignment" {
-#   name                 = "custom-NIST-assignment"
-#   subscription_id   = "/subscriptions/4fb4560b-49e0-44b7-8192-3bef773c226c"
-#   policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f"
-#   parameters           = jsonencode({
+ resource "azurerm_subscription_policy_assignment" "cis_assignment" {
+   name                 = "cis-v3-assignment"
+   subscription_id   = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330"
+   policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/470a962c-86a0-433b-803a-3c176b5ce79c"
+   parameters           = jsonencode({
     
-#   })
-#   description          = "Custom assignment for built-in NIST initiative"
-#   location             = "East US"
+   })
+   description          = "Assignment for built-in CIS v.3.0 initiative"
+   location             = "East US"
 
-#   identity {
-#     type         = "SystemAssigned"
-#     # identity_ids = ["<your-user-assigned-identity-resource-id>"]
-#   }
-# }
+ }
 # resource "azurerm_resource_group_policy_assignment" "mcsb_assignment" {
 #   name                 = "custom-mcsb-assignment"
 #   resource_group_id    = "/subscriptions/4fb4560b-49e0-44b7-8192-3bef773c226c/resourceGroups/policytest1-rg"
