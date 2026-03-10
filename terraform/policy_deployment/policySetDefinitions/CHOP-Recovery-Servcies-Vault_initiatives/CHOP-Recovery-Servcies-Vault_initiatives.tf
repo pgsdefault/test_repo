@@ -1,7 +1,7 @@
 variable "management_group_id" {
   description = "Optional management group ID for policy definition scope. If not set, policy is created at subscription scope."
   type        = string
-  default     = "root"
+  default     = "mymg"
 }
 locals {
   custom_policy_files = fileset("${path.module}/../../policyDefinitions/CHOP-Recovery-Servcies-Vault", "*.json")

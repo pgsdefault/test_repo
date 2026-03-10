@@ -31,7 +31,7 @@ variable "scope_exclusions" {
 variable "management_group_id" {
   description = "Optional management group ID for initiative definition scope. If not set, initiative is created at subscription scope."
   type        = string
-  default     = "root"
+  default     = "mymg"
 }
 
 variable "policy_definition_groups" {

@@ -6,7 +6,7 @@
 variable "management_group_id" {
   description = "Optional management group ID for policy definition scope. If not set, policy is created at subscription scope."
   type        = string
-  default     = "root"
+  default     = "mymg"
 }
 
 variable "policy_exclusions" {
