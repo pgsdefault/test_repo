@@ -16,7 +16,7 @@
       "value": []
     },
     "tagOperator": {
-      "value": ""
+      "value": "Any"
     }
   },
   "Configure periodic checking for missing system updates on azure virtual machines": {
@@ -39,7 +39,7 @@
       "value": []
     },
     "tagOperator": {
-      "value": ""
+      "value": "Any"
     }
   },
   "chop-patchschedule-tagnameandvalue-vm.json": {
