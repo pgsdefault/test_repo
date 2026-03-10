@@ -20,13 +20,8 @@
     }
   },
   "Configure periodic checking for missing system updates on azure virtual machines": {
-    "effect": {
-      "value": "Modify"
-    },
+    
     "tagValues": {
-      "value": []
-    },
-    "resourceGroups": {
       "value": []
     },
     "osType": {

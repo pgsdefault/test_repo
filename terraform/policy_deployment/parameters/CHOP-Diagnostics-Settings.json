@@ -13,7 +13,7 @@
       "value": []
     },
     "logAnalytics": {
-      "value": ""
+      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
     }
   },
   "Enable logging by category group for Recovery Services vaults (microsoft.recoveryservices/vaults) to Log Analytics": {
@@ -30,7 +30,7 @@
       "value": []
     },
     "logAnalytics": {
-      "value": ""
+      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
     }
   },
   "Enable logging by category group for Load balancers (microsoft.network/loadbalancers) to Log Analytics": {
@@ -47,7 +47,7 @@
       "value": []
     },
     "logAnalytics": {
-      "value": ""
+      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
     }
   },
   "Enable logging by category group for Public IP addresses (microsoft.network/publicipaddresses) to Log Analytics": {
@@ -64,7 +64,7 @@
       "value": []
     },
     "logAnalytics": {
-      "value": ""
+      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
     }
   },
   "Enable logging by category group for Automation Accounts (microsoft.automation/automationaccounts) to Log Analytics": {
@@ -81,7 +81,7 @@
       "value": []
     },
     "logAnalytics": {
-      "value": ""
+      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
     }
   },
   "Enable logging by category group for Virtual network gateways (microsoft.network/virtualnetworkgateways) to Log Analytics": {
@@ -98,7 +98,7 @@
       "value": []
     },
     "logAnalytics": {
-      "value": ""
+      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
     }
   }
 }
