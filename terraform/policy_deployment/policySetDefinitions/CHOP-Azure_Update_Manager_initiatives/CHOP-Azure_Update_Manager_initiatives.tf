@@ -75,7 +75,7 @@ locals {
 
 output "azure_update_manager_initiative" {
   value = {
-    name         = "CHOP-azure-update-manager-initiative"
+    name         = "CHOP-azure-update-manager"
     display_name = "Test-CHOP-azure-update-manager Initiative"
     description  = "Initiative for CHOP azure update manager resources, including custom and built-in policies."
     policy_definitions = local.policy_definitions
