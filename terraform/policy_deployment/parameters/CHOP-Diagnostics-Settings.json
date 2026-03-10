@@ -10,7 +10,9 @@
       "value": "allLogs"
     },
     "resourceLocationList": {
-      "value": []
+      "value": [
+        "*"
+      ]
     },
     "logAnalytics": {
       "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
@@ -27,7 +29,9 @@
       "value": "allLogs"
     },
     "resourceLocationList": {
-      "value": []
+      "value": [
+        "*"
+      ]
     },
     "logAnalytics": {
       "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
@@ -44,7 +48,9 @@
       "value": "allLogs"
     },
     "resourceLocationList": {
-      "value": []
+      "value": [
+        "*"
+      ]
     },
     "logAnalytics": {
       "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
@@ -61,7 +67,9 @@
       "value": "allLogs"
     },
     "resourceLocationList": {
-      "value": []
+      "value": [
+        "*"
+      ]
     },
     "logAnalytics": {
       "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
@@ -78,7 +86,9 @@
       "value": "allLogs"
     },
     "resourceLocationList": {
-      "value": []
+      "value": [
+        "*"
+      ]
     },
     "logAnalytics": {
       "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
@@ -95,7 +105,9 @@
       "value": "allLogs"
     },
     "resourceLocationList": {
-      "value": []
+      "value": [
+        "*"
+      ]
     },
     "logAnalytics": {
       "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
