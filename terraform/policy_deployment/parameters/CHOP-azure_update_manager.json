@@ -22,7 +22,7 @@
   "Configure periodic checking for missing system updates on azure virtual machines": {
     
     "tagValues": {
-      "value": []
+      "value": {}
     },
     "osType": {
       "value": "Windows"
