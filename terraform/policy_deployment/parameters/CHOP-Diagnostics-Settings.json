@@ -4,7 +4,7 @@
       "value": "DeployIfNotExists"
     },
     "diagnosticSettingName": {
-      "value": ""
+      "value": "SetbyPolicy"
     },
     "categoryGroup": {
       "value": "allLogs"
@@ -21,7 +21,7 @@
       "value": "DeployIfNotExists"
     },
     "diagnosticSettingName": {
-      "value": ""
+      "value": "SetbyPolicy"
     },
     "categoryGroup": {
       "value": "allLogs"
@@ -38,7 +38,7 @@
       "value": "DeployIfNotExists"
     },
     "diagnosticSettingName": {
-      "value": ""
+      "value": "SetbyPolicy"
     },
     "categoryGroup": {
       "value": "allLogs"
@@ -55,7 +55,7 @@
       "value": "DeployIfNotExists"
     },
     "diagnosticSettingName": {
-      "value": ""
+      "value": "SetbyPolicy"
     },
     "categoryGroup": {
       "value": "allLogs"
@@ -72,7 +72,7 @@
       "value": "DeployIfNotExists"
     },
     "diagnosticSettingName": {
-      "value": ""
+      "value": "SetbyPolicy"
     },
     "categoryGroup": {
       "value": "allLogs"
@@ -89,7 +89,7 @@
       "value": "DeployIfNotExists"
     },
     "diagnosticSettingName": {
-      "value": ""
+      "value": "SetbyPolicy"
     },
     "categoryGroup": {
       "value": "allLogs"
