@@ -19,21 +19,21 @@ module "initiative" {
 module "initiative_assignment" {
   source     = "./modules/policy_assignment"
   assignments = merge(
-    {
-      for k, v in local.initiative_ids :
-      "${k}-rg" => {
-        name                      = "${k}-initiative-assignment-rg"
-        scope                     = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing"
-        policy_definition_id      = v.policy_set_definition_id
-        parameters                = ""
-        description               = v.description
-        #assigned_by               = data.azuread_user.current.user_principal_name
-        assigned_by               = "Terraform"
-        location                  = "South Central Us"
-        user_assigned_identity_id = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI"
-        exclusions                = lookup(var.policy_exclusions, k, [])
-      }
-    }
+    #{
+    #  for k, v in local.initiative_ids :
+    #  "${k}-rg" => {
+    #    name                      = "${k}-initiative-assignment-rg"
+    #    scope                     = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing"
+    #    policy_definition_id      = v.policy_set_definition_id
+    #    parameters                = ""
+    #    description               = v.description
+    #    #assigned_by               = data.azuread_user.current.user_principal_name
+    #    assigned_by               = "Terraform"
+    #    location                  = "South Central Us"
+    #    user_assigned_identity_id = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI"
+    #    exclusions                = lookup(var.policy_exclusions, k, [])
+    #  }
+    #}
     # ,
     # {
     #   for k, v in local.initiative_ids :
@@ -51,21 +51,21 @@ module "initiative_assignment" {
     #   }
     # }
     # ,
-    # {
-    #   for k, v in local.initiative_ids :
-    #   "${k}-mg" => {
-    #     name                      = "${k}-initiative-assignment-mg"
-    #     scope                     = "/providers/Microsoft.Management/managementGroups/Azure-mg-1"
-    #     policy_definition_id      = v.policy_set_definition_id
-    #     parameters                = ""
-    #     description               = v.description
-    #     # assigned_by               = data.azuread_user.current.user_principal_name
-    #     assigned_by               = "Terraform"
-    #     location                  = "South Central Us"
-    #     user_assigned_identity_id = null
-    #     exclusions                = lookup(var.policy_exclusions, k, [])
-    #   }
-    # }
+    {
+       for k, v in local.initiative_ids :
+       "${k}-mg" => {
+         name                      = "${k}-initiative-assignment-mg"
+         scope                     = "/providers/Microsoft.Management/managementGroups/mg2"
+         policy_definition_id      = v.policy_set_definition_id
+         parameters                = ""
+         description               = v.description
+         # assigned_by               = data.azuread_user.current.user_principal_name
+         assigned_by               = "Terraform"
+         location                  = "South Central Us"
+         user_assigned_identity_id = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI"
+         exclusions                = lookup(var.policy_exclusions, k, [])
+       }
+    }
   )
 }
 
@@ -88,17 +88,17 @@ module "initiative_assignment" {
 #   }
 # }
 
- resource "azurerm_subscription_policy_assignment" "cis_assignment" {
-   name                 = "cis-v3-assignment"
-   subscription_id   = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330"
-   policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/470a962c-86a0-433b-803a-3c176b5ce79c"
-   parameters           = jsonencode({
-    
-   })
-   description          = "Assignment for built-in CIS v.3.0 initiative"
-   location             = "East US"
-
- }
+# resource "azurerm_subscription_policy_assignment" "cis_assignment" {
+#   name                 = "cis-v3-assignment"
+#   subscription_id   = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330"
+#   policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/470a962c-86a0-433b-803a-3c176b5ce79c"
+#   parameters           = jsonencode({
+#    
+#   })
+#   description          = "Assignment for built-in CIS v.3.0 initiative"
+#   location             = "East US"
+#
+# }
 # resource "azurerm_resource_group_policy_assignment" "mcsb_assignment" {
 #   name                 = "custom-mcsb-assignment"
 #   resource_group_id    = "/subscriptions/4fb4560b-49e0-44b7-8192-3bef773c226c/resourceGroups/policytest1-rg"
@@ -117,23 +117,18 @@ module "initiative_assignment" {
 #   }
 # }
 #We can do at given scope
-# resource "azurerm_management_group_policy_assignment" "mcsb_assignment" {
-#   name                 = "custom-mcsb-assignment"
-#   management_group_id  = "/providers/Microsoft.Management/managementGroups/Azure-mg-1"
-#   policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8"
-#   parameters           = jsonencode({
-#     # dcrResourceId = { value = "" }
-#     # bringYourOwnUserAssignedManagedIdentity = { value = false }
-#     # Add other required parameters if needed
-#   })
-#   description          = "Custom assignment for built-in MCSB initiative"
-#   location             = "East US"
-
-#   identity {
-#     type         = "SystemAssigned"
-#     # identity_ids = ["<your-user-assigned-identity-resource-id>"]
-#   }
-# }
+ resource "azurerm_management_group_policy_assignment" "cisv3_assignment" {
+   name                 = "custom-mcsb-assignment"
+   management_group_id  = "/providers/Microsoft.Management/managementGroups/mymg"
+   policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/470a962c-86a0-433b-803a-3c176b5ce79c"
+   parameters           = jsonencode({
+     # dcrResourceId = { value = "" }
+     # bringYourOwnUserAssignedManagedIdentity = { value = false }
+     # Add other required parameters if needed
+   })
+   description          = "Custom assignment for built-in MCSB initiative"
+   location             = "East US"
+ }
 
 
 # resource "azurerm_resource_group_policy_assignment" "CIS_Benchmark_assignment" {

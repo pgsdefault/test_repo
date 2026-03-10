@@ -1,0 +1,55 @@
+{
+  "Set prerequisite for Scheduling recurring updates on Azure virtual machines": {
+    "tagValues": {
+      "value": {}
+    },
+    "locations": {
+      "value": []
+    },
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "resourceGroups": {
+      "value": []
+    },
+    "operatingSystemTypes": {
+      "value": []
+    },
+    "tagOperator": {
+      "value": ""
+    }
+  },
+  "Configure periodic checking for missing system updates on azure virtual machines": {
+    "effect": {
+      "value": "Modify"
+    },
+    "tagValues": {
+      "value": []
+    },
+    "resourceGroups": {
+      "value": []
+    },
+    "osType": {
+      "value": ""
+    },
+    "assessmentMode": {
+      "value": ""
+    },
+    "locations": {
+      "value": []
+    },
+    "tagOperator": {
+      "value": ""
+    }
+  },
+  "chop-patchschedule-tagnameandvalue-vm.json": {
+    "allowedTagValues": {
+      "value": [
+        "ALL_DO_NOT_PATCH"
+      ]
+    },
+    "tagName": {
+      "value": "PatchSchedule"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "[Preview]: Configure Azure Recovery Services vaults to disable public network access": {
+        "effect": {
+            "value": "Modify"
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "chop-patchschedule-tagnameandvalue-vm",
+  "displayName": "CHOP Enforce Patch Schedule Tag name and Tag values on Virtual Machines",
+  "description": "",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+    "category": "Azure Update Manager",
+    "custom_policy_mapping": []
+  },
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "equals": "Microsoft.Compute/virtualMachines",
+          "field": "type"
+        },
+        {
+          "anyOf": [
+            {
+              "exists": "false",
+              "field": "[concat('tags[', parameters('tagName'), ']')]"
+            },
+            {
+              "field": "[concat('tags[', parameters('tagName'), ']')]",
+              "notIn": "[parameters('allowedTagValues')]"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters": {
+    "allowedTagValues": {
+      "type": "Array",
+      "metadata": {
+        "description": "Value of the tag, such as 'production'",
+        "displayName": "Tag Value"
+      },
+      "defaultValue": [
+        "ALL_DO_NOT_PATCH"
+      ]
+    },
+    "tagName": {
+      "type": "String",
+      "metadata": {
+        "description": "Name of the tag, such as 'environment'",
+        "displayName": "Tag Name"
+      },
+      "defaultValue": "PatchSchedule"
+    }
+  }
+}

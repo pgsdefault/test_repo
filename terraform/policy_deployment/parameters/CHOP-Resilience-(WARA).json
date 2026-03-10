@@ -1,0 +1,32 @@
+{
+    "[Preview]: Virtual Machines should be Zone Aligned": {
+        "effect": {
+            "value": "Deny"
+        }
+    },
+    "[Preview]: Storage Accounts should be Zone Redundant": {
+        "effect": {
+            "value": "Deny"
+        }
+    },
+    "[Preview]: Backup and Site Recovery should be Zone Redundant": {
+        "effect": {
+            "value": "Deny"
+        }
+    },
+    "[Preview]: Load Balancers should be Zone Resilient": {
+        "effect": {
+            "value": "Deny"
+        }
+    },
+    "[Preview]: Public IP addresses should be Zone Resilient": {
+        "effect": {
+            "value": "Deny"
+        }
+    },
+    "[Preview]: Virtual network gateways should be Zone Redundant": {
+        "effect": {
+            "value": "Deny"
+        }
+    }
+}

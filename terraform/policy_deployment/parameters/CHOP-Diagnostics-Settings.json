@@ -1,0 +1,104 @@
+{
+  "Enable logging by category group for Virtual networks (microsoft.network/virtualnetworks) to Log Analytics": {
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "diagnosticSettingName": {
+      "value": ""
+    },
+    "categoryGroup": {
+      "value": ""
+    },
+    "resourceLocationList": {
+      "value": []
+    },
+    "logAnalytics": {
+      "value": ""
+    }
+  },
+  "Enable logging by category group for Recovery Services vaults (microsoft.recoveryservices/vaults) to Log Analytics": {
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "diagnosticSettingName": {
+      "value": ""
+    },
+    "categoryGroup": {
+      "value": ""
+    },
+    "resourceLocationList": {
+      "value": []
+    },
+    "logAnalytics": {
+      "value": ""
+    }
+  },
+  "Enable logging by category group for Load balancers (microsoft.network/loadbalancers) to Log Analytics": {
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "diagnosticSettingName": {
+      "value": ""
+    },
+    "categoryGroup": {
+      "value": ""
+    },
+    "resourceLocationList": {
+      "value": []
+    },
+    "logAnalytics": {
+      "value": ""
+    }
+  },
+  "Enable logging by category group for Public IP addresses (microsoft.network/publicipaddresses) to Log Analytics": {
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "diagnosticSettingName": {
+      "value": ""
+    },
+    "categoryGroup": {
+      "value": ""
+    },
+    "resourceLocationList": {
+      "value": []
+    },
+    "logAnalytics": {
+      "value": ""
+    }
+  },
+  "Enable logging by category group for Automation Accounts (microsoft.automation/automationaccounts) to Log Analytics": {
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "diagnosticSettingName": {
+      "value": ""
+    },
+    "categoryGroup": {
+      "value": ""
+    },
+    "resourceLocationList": {
+      "value": []
+    },
+    "logAnalytics": {
+      "value": ""
+    }
+  },
+  "Enable logging by category group for Virtual network gateways (microsoft.network/virtualnetworkgateways) to Log Analytics": {
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "diagnosticSettingName": {
+      "value": ""
+    },
+    "categoryGroup": {
+      "value": ""
+    },
+    "resourceLocationList": {
+      "value": []
+    },
+    "logAnalytics": {
+      "value": ""
+    }
+  }
+}

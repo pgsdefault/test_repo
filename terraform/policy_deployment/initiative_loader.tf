@@ -6,23 +6,23 @@
 # }
 
 
-module "ZeroTrust_initiative_loader" {
-  source              = "./policySetDefinitions/ZeroTrust_initiatives"
+module "UpdateManager_initiative_loader" {
+  source              = "./policySetDefinitions/CHOP-Azure_Update_Manager_initiatives"
   management_group_id = var.management_group_id
 }
 
-module "PublicNetworkAccess_initiative_loader" {
-  source              = "./policySetDefinitions/PublicNetworkAccess_initiatives"
+module "Diagnostics_initiative_loader" {
+  source              = "./policySetDefinitions/CHOP-Diagnostics-Settings_initiatives"
   management_group_id = var.management_group_id
 }
 
-module "EncryptionAtRest_initiative_loader" {
-  source              = "./policySetDefinitions/EncryptionAtRest_initiatives"
+module "RecoveryVaults_initiative_loader" {
+  source              = "./policySetDefinitions/CHOP-Recovery-Servcies-Vault_initiatives"
   management_group_id = var.management_group_id
 }
 
-module "publicIP_initiative_loader" {
-  source              = "./policySetDefinitions/publicIP_initiatives"
+module "Resilience_initiative_loader" {
+  source              = "./policySetDefinitions/CHOP-Resilience-(WARA)_initiatives"
   management_group_id = var.management_group_id
 }
 
@@ -31,10 +31,10 @@ module "publicIP_initiative_loader" {
 # Update this locals block when you add a new initiative/service in initiative_loader.tf.
 locals {
   initiatives = {
-    ZeroTrust           = module.ZeroTrust_initiative_loader.ZeroTrust_initiative
-    PublicNetworkAccess = module.PublicNetworkAccess_initiative_loader.PublicNetworkAccess_initiative
-    EncryptionAtRest    = module.EncryptionAtRest_initiative_loader.EncryptionAtRest_initiative
-    publicIP            = module.publicIP_initiative_loader.publicIP_initiative
+    UpdateManager           = module.UpdateManager_initiative_loader.azure_update_manager_initiative
+    Diagnostics = module.Diagnostics_initiative_loader.Diagnostics_initiative
+    RecoveryVaults    = module.RecoveryVaults_initiative_loader.RecoveryVaults_initiative
+    Resilience            = module.Resilience_initiative_loader.Resilience_initiative
 
     # Add new initiatives here, e.g.:
     # storage = module.storage_initiative_loader.storage_initiative

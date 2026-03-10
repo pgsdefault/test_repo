@@ -1,20 +1,11 @@
 variable "management_group_id" {
   description = "Optional management group ID for policy definition scope. If not set, policy is created at subscription scope."
   type        = string
-  default     = ""
+  default     = "/providers/Microsoft.Management/managementGroups/0b41911c-2a00-428b-993b-9b7298dad57d"
 }
 locals {
-  custom_policy_files = fileset("${path.module}/../../policyDefinitions/EncryptionAtRest", "*.json")
-  raw_policy_parameters = jsondecode(file("${path.module}/../../parameters/EncryptionAtRest_parameters.json"))
-  policy_parameters = {
-    for policy_name, params in local.raw_policy_parameters :
-    policy_name => {
-      for param_name, param_body in params :
-      param_name => {
-        value = param_body.value
-      }
-    }
-  }
+  custom_policy_files = fileset("${path.module}/../../policyDefinitions/CHOP-azure_update_manager", "*.json")
+  policy_parameters = jsondecode(file("${path.module}/../../parameters/CHOP-azure_update_manager.json"))
   # Get all JSON files in the folder
   policy_group_files = fileset("${path.module}/../../compliance_standard", "*.json")
   # Decode all JSON files
@@ -26,7 +17,7 @@ locals {
   custom_policy_group_mapping = {
     for file in local.custom_policy_files : 
     file => lookup(
-      jsondecode(file("${path.module}/../../policyDefinitions/EncryptionAtRest/${file}")).metadata,
+      jsondecode(file("${path.module}/../../policyDefinitions/CHOP-azure_update_manager/${file}")).metadata,
       "custom_policy_mapping",null
     )
   }
@@ -35,7 +26,7 @@ locals {
 module "custom_policy" {
   source              = "../../modules/policy_definition"
   for_each            = toset(local.custom_policy_files)
-  policy_json_path    = "${path.module}/../../policyDefinitions/EncryptionAtRest/${each.key}"
+  policy_json_path    = "${path.module}/../../policyDefinitions/CHOP-azure_update_manager/${each.key}"
   management_group_id = var.management_group_id
   name                = each.key
 }
@@ -51,16 +42,16 @@ locals {
     #List of Built-in Policies 
     [
       {
-        name = "Azure Batch account should use customer-managed keys to encrypt data"
-        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/99e9ccd8-3db9-4592-b0d1-14b1715a4d8a"
-        parameter_values = jsonencode(lookup(local.policy_parameters, "Azure Batch account should use customer-managed keys to encrypt data", {}))
-        policy_group_names          = ["Azure_Security_Benchmark_v3.0_DP-5","NIST_SP_800-53_R5_SC-12"]
+        name = "Set prerequisite for Scheduling recurring updates on Azure virtual machines."
+        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/9905ca54-1471-49c6-8291-7582c04cd4d4"
+        parameter_values = jsonencode(lookup(local.policy_parameters, "Set prerequisite for Scheduling recurring updates on Azure virtual machines", {}))
+        policy_group_names          = []
       },
       {
-        name = "Container registries should be encrypted with a customer-managed key"
-        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/5b9159ae-1701-4a6f-9a7a-aa9c8ddd0580"
-        parameter_values = jsonencode(lookup(local.policy_parameters, "Container registries should be encrypted with a customer-managed key", {}))
-         policy_group_names          = ["Azure_Security_Benchmark_v3.0_DP-5","NIST_SP_800-53_R5_SC-12"]
+        name = "Configure periodic checking for missing system updates on azure virtual machines."
+        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15"
+        parameter_values = jsonencode(lookup(local.policy_parameters, "Configure periodic checking for missing system updates on azure virtual machines", {}))
+        policy_group_names          = []
       }
     ]
   )
@@ -82,17 +73,17 @@ locals {
   ]
 }
 
-output "EncryptionAtRest_initiative" {
+output "azure_update_manager_initiative" {
   value = {
-    name         = "EncryptionAtRest-initiative"
-    display_name = "123-EncryptionAtRest Initiative"
-    description  = "Initiative for EncryptionAtRest policies, including custom and built-in policies."
+    name         = "CHOP-azure-update-manager-initiative"
+    display_name = "Test-CHOP-azure-update-manager Initiative"
+    description  = "Initiative for CHOP azure update manager resources, including custom and built-in policies."
     policy_definitions = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups
     metadata = {
-      category    = "EncryptionAtRest"
+      category    = "Azure Update Manager"
       created_by  = "Terraform"
-      description = "Initiative for EncryptionAtRest policies, including custom and built-in policies."
+      description = "Initiative for azure update manager resources, including custom and built-in policies."
     }
   }
 }

@@ -1,20 +1,11 @@
 variable "management_group_id" {
   description = "Optional management group ID for policy definition scope. If not set, policy is created at subscription scope."
   type        = string
-  default     = ""
+  default     = "/providers/Microsoft.Management/managementGroups/0b41911c-2a00-428b-993b-9b7298dad57d"
 }
 locals {
-  custom_policy_files = fileset("${path.module}/../../policyDefinitions/publicIP", "*.json")
-  raw_policy_parameters = jsondecode(file("${path.module}/../../parameters/publicIP_parameters.json"))
-  policy_parameters = {
-    for policy_name, params in local.raw_policy_parameters :
-    policy_name => {
-      for param_name, param_body in params :
-      param_name => {
-        value = param_body.value
-      }
-    }
-  }
+  custom_policy_files = fileset("${path.module}/../../policyDefinitions/CHOP-Recovery-Servcies-Vault", "*.json")
+  policy_parameters = jsondecode(file("${path.module}/../../parameters/CHOP-Recovery-Servcies-Vault.json"))
   # Get all JSON files in the folder
   policy_group_files = fileset("${path.module}/../../compliance_standard", "*.json")
   # Decode all JSON files
@@ -26,7 +17,7 @@ locals {
   custom_policy_group_mapping = {
     for file in local.custom_policy_files : 
     file => lookup(
-      jsondecode(file("${path.module}/../../policyDefinitions/publicIP/${file}")).metadata,
+      jsondecode(file("${path.module}/../../policyDefinitions/CHOP-Recovery-Servcies-Vault/${file}")).metadata,
       "custom_policy_mapping",null
     )
   }
@@ -35,7 +26,7 @@ locals {
 module "custom_policy" {
   source              = "../../modules/policy_definition"
   for_each            = toset(local.custom_policy_files)
-  policy_json_path    = "${path.module}/../../policyDefinitions/publicIP/${each.key}"
+  policy_json_path    = "${path.module}/../../policyDefinitions/CHOP-Recovery-Servcies-Vault/${each.key}"
   management_group_id = var.management_group_id
   name                = each.key
 }
@@ -51,17 +42,11 @@ locals {
     #List of Built-in Policies 
     [
       {
-        name = "Network interfaces should not have public IPs"
-        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/83a86a26-fd1f-447c-b59d-e51f44264114"
-        parameter_values = jsonencode(lookup(local.policy_parameters, "Network interfaces should not have public IPs", {}))
+        name = "[Preview]: Configure Azure Recovery Services vaults to disable public network access"
+        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/04726aae-4e8d-427c-af7d-ecf56d490022"
+        parameter_values = jsonencode(lookup(local.policy_parameters, "[Preview]: Configure Azure Recovery Services vaults to disable public network access", {}))
         policy_group_names          = []
       },
-      {
-        name = "Configure App Service app slots to use the latest TLS version"
-        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/014664e7-e348-41a3-aeb9-566e4ff6a9df"
-        parameter_values = jsonencode(lookup(local.policy_parameters, "Configure App Service app slots to use the latest TLS version", {}))
-         policy_group_names          = []
-      }
     ]
   )
 }
@@ -82,17 +67,17 @@ locals {
   ]
 }
 
-output "publicIP_initiative" {
+output "RecoveryVaults_initiative" {
   value = {
-    name         = "pIP-initiative"
-    display_name = "123-publicIP Initiative"
-    description  = "Initiative for publicIP related policies, including custom and built-in policies."
+    name         = "CHOP-Recovery Servcies Vault-initiative"
+    display_name = "CHOP-Recovery Servcies Vault Initiative"
+    description  = "Initiative for CHOP-Diagnostics Settings resources, including custom and built-in policies."
     policy_definitions = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups
     metadata = {
-      category    = "publicIP"
+      category    = "CHOP-Recovery Servcies Vault"
       created_by  = "Terraform"
-      description = "Initiative for publicIP related policies, including custom and built-in policies."
+      description = "Initiative for CHOP-Recovery Servcies Vault resources, including custom and built-in policies."
     }
   }
 }
