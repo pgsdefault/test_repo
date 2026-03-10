@@ -62,7 +62,7 @@ module "initiative_assignment" {
          # assigned_by               = data.azuread_user.current.user_principal_name
          assigned_by               = "Terraform"
          location                  = "South Central Us"
-         user_assigned_identity_id = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI"
+         user_assigned_identity_id = "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ptesting2"
          exclusions                = lookup(var.policy_exclusions, k, [])
        }
     }
