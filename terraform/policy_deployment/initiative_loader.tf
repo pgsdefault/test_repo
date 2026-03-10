@@ -31,9 +31,9 @@ module "Resilience_initiative_loader" {
 # Update this locals block when you add a new initiative/service in initiative_loader.tf.
 locals {
   initiatives = {
-    UpdateManager           = module.UpdateManager_initiative_loader.azure_update_manager_initiative
-    Diagnostics = module.Diagnostics_initiative_loader.Diagnostics_initiative
-    RecoveryVaults    = module.RecoveryVaults_initiative_loader.RecoveryVaults_initiative
+    UM           = module.UpdateManager_initiative_loader.azure_update_manager_initiative
+    Diagnostic = module.Diagnostics_initiative_loader.Diagnostics_initiative
+    RecoveryVa    = module.RecoveryVaults_initiative_loader.RecoveryVaults_initiative
     Resilience            = module.Resilience_initiative_loader.Resilience_initiative
 
     # Add new initiatives here, e.g.:
