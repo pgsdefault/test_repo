@@ -1,7 +1,7 @@
 variable "management_group_id" {
   description = "Optional management group ID for policy definition scope. If not set, policy is created at subscription scope."
   type        = string
-  default     = "/providers/Microsoft.Management/managementGroups/0b41911c-2a00-428b-993b-9b7298dad57d"
+  default     = "0b41911c-2a00-428b-993b-9b7298dad57d"
 }
 locals {
   custom_policy_files = fileset("${path.module}/../../policyDefinitions/CHOP-Diagnostics-Settings", "*.json")
