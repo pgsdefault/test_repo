@@ -23,7 +23,7 @@ resource "azurerm_policy_set_definition" "this" {
     for_each = var.policy_definitions
     content {
       policy_definition_id = policy_definition_reference.value.policy_definition_id
-      reference_id = policy_definition_reference.key
+      reference_id = policy_definition_reference.value.name
       parameter_values     = policy_definition_reference.value.parameter_values
       policy_group_names   = lookup(policy_definition_reference.value, "policy_group_names", null)
     }
@@ -55,7 +55,7 @@ dynamic "policy_definition_group" {
     for_each = var.policy_definitions
     content {
       policy_definition_id = policy_definition_reference.value.policy_definition_id
-      reference_id = policy_definition_reference.key
+      reference_id = policy_definition_reference.value.name
       parameter_values     = policy_definition_reference.value.parameter_values
       policy_group_names   = lookup(policy_definition_reference.value, "policy_group_names", null)
     }
