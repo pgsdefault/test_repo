@@ -1,5 +1,5 @@
 {
-  "Set prerequisite for Scheduling recurring updates on Azure virtual machines": {
+  "Set prerequisite for Scheduling recurring updates on Azure virtual machines - Windows": {
     "tagValues": {
       "value": []
     },
@@ -13,19 +13,59 @@
       "value": []
     },
     "operatingSystemTypes": {
+      "value": [
+        "Windows"
+      ]
+    },
+    "tagOperator": {
+      "value": "Any"
+    }
+  },
+  "Configure periodic checking for missing system updates on azure virtual machines - Windows": {
+    "tagValues": {
+      "value": {}
+    },
+    "osType": {
+      "value": "Windows"
+    },
+    "assessmentMode": {
+      "value": "AutomaticByPlatform"
+    },
+    "locations": {
       "value": []
     },
     "tagOperator": {
       "value": "Any"
     }
   },
-  "Configure periodic checking for missing system updates on azure virtual machines": {
-    
+  "Set prerequisite for Scheduling recurring updates on Azure virtual machines - Linux": {
+    "tagValues": {
+      "value": []
+    },
+    "locations": {
+      "value": []
+    },
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "resourceGroups": {
+      "value": []
+    },
+    "operatingSystemTypes": {
+      "value": [
+        "Linux"
+      ]
+    },
+    "tagOperator": {
+      "value": "Any"
+    }
+  },
+  "Configure periodic checking for missing system updates on azure virtual machines - Linux": {
     "tagValues": {
       "value": {}
     },
     "osType": {
-      "value": "Windows"
+      "value": "Linux"
     },
     "assessmentMode": {
       "value": "AutomaticByPlatform"

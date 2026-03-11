@@ -42,15 +42,27 @@ locals {
     #List of Built-in Policies 
     [
       {
-        name = "Set prerequisite for Scheduling recurring updates on Azure virtual machines."
+        name = "Set prerequisite for Scheduling recurring updates on Azure virtual machines - Windows."
         policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/9905ca54-1471-49c6-8291-7582c04cd4d4"
-        parameter_values = jsonencode(lookup(local.policy_parameters, "Set prerequisite for Scheduling recurring updates on Azure virtual machines", {}))
+        parameter_values = jsonencode(lookup(local.policy_parameters, "Set prerequisite for Scheduling recurring updates on Azure virtual machines - Windows", {}))
         policy_group_names          = []
       },
       {
-        name = "Configure periodic checking for missing system updates on azure virtual machines."
+        name = "Configure periodic checking for missing system updates on azure virtual machines - Windows."
         policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15"
-        parameter_values = jsonencode(lookup(local.policy_parameters, "Configure periodic checking for missing system updates on azure virtual machines", {}))
+        parameter_values = jsonencode(lookup(local.policy_parameters, "Configure periodic checking for missing system updates on azure virtual machines - Windows", {}))
+        policy_group_names          = []
+      }
+      {
+        name = "Set prerequisite for Scheduling recurring updates on Azure virtual machines - Linux."
+        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/9905ca54-1471-49c6-8291-7582c04cd4d4"
+        parameter_values = jsonencode(lookup(local.policy_parameters, "Set prerequisite for Scheduling recurring updates on Azure virtual machines - Linux", {}))
+        policy_group_names          = []
+      },
+      {
+        name = "Configure periodic checking for missing system updates on azure virtual machines - Linux."
+        policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15"
+        parameter_values = jsonencode(lookup(local.policy_parameters, "Configure periodic checking for missing system updates on azure virtual machines - Linux", {}))
         policy_group_names          = []
       }
     ]
