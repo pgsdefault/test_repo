@@ -4,11 +4,14 @@
 variable "name" {}
 variable "display_name" {}
 variable "policy_type" { default = "Custom" }
-variable "policy_definitions" { type = list(object({
-	policy_definition_id = string
-	parameter_values    = optional(string, "{}")
-  policy_group_names   = optional(list(string), [])
-})) }
+variable "policy_definitions" { 
+  type = list(object({
+    name                 = string
+    policy_definition_id = string
+    parameter_values     = optional(string, "{}")
+    policy_group_names   = optional(list(string), [])
+  })) 
+}
 variable "metadata" { default = "{\"category\":\"General\"}" }
 variable "description" {
 	type        = string
