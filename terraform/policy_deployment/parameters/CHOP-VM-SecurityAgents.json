@@ -333,7 +333,9 @@
             "value": []
         },
         "operatingSystemTypes": {
-            "value": "Windows"
+            "value": [
+                "Windows"
+            ]
         },
         "locations": {
             "value": []
@@ -356,7 +358,9 @@
             "value": []
         },
         "operatingSystemTypes": {
-            "value": "Linux"
+            "value": [
+                "Linux"
+            ]
         },
         "locations": {
             "value": []
