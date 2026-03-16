@@ -94,7 +94,7 @@ locals {
 output "Diagnostics_initiative" {
   value = {
     name                     = "CHOP-Diagnostics-Settings-initiative"
-    display_name             = "CHOP-Diagnostics Settings Initiative"
+    display_name             = "CHOP-EPIC-Diagnostics Settings Initiative"
     description              = "Initiative for CHOP-Diagnostics Settings resources, including custom and built-in policies."
     policy_definitions       = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups

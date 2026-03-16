@@ -39,17 +39,17 @@ locals {
 
   initiatives = {
 
-    update_manager = module.update_manager_initiative_loader.azure_update_manager_initiative
+    Update_Manager = module.update_manager_initiative_loader.azure_update_manager_initiative
 
-    diagnostics    = module.diagnostics_initiative_loader.Diagnostics_initiative
+    Diagnostics    = module.diagnostics_initiative_loader.Diagnostics_initiative
 
-    recovery_vaults = module.recovery_vaults_initiative_loader.RecoveryVaults_initiative
+    Recovery_Vaults = module.recovery_vaults_initiative_loader.RecoveryVaults_initiative
 
-    resilience_wara = module.resilience_initiative_loader.Resilience_initiative
+    Resilience_WARA = module.resilience_initiative_loader.Resilience_initiative
 
-    storage_accounts = module.storage_initiative_loader.storage_accounts_initiative
+    Storage_Accounts = module.storage_initiative_loader.storage_accounts_initiative
 
-    vm_security_agents = module.vm_security_agents_initiative_loader.vm_monitoring_security_initiative
+    VM_Security_Agents = module.vm_security_agents_initiative_loader.vm_monitoring_security_initiative
   }
 
 }

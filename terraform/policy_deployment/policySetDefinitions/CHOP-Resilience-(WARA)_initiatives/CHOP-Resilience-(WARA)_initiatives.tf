@@ -94,7 +94,7 @@ locals {
 output "Resilience_initiative" {
   value = {
     name                     = "CHOP-Resilience-WARA-initiative"
-    display_name             = "CHOP-Resilience-(WARA) Initiative"
+    display_name             = "CHOP-EPIC-Resilience-(WARA) Initiative"
     description              = "Initiative for CHOP-Resilience (WARA) resources, including custom and built-in policies."
     policy_definitions       = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups

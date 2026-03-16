@@ -69,7 +69,7 @@ locals {
 output "RecoveryVaults_initiative" {
   value = {
     name                     = "CHOP-Recovery-Servcies-Vault-initiative"
-    display_name             = "CHOP-Recovery Servcies Vault Initiative"
+    display_name             = "CHOP-EPIC-Recovery Servcies Vault Initiative"
     description              = "Initiative for CHOP-Recovery Vault resources, including custom and built-in policies."
     policy_definitions       = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups

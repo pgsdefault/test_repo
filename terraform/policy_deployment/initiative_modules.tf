@@ -59,7 +59,7 @@ module "initiative_assignment" {
     {
       for k, v in local.initiative_ids :
       "${k}-mg" => {
-        name                 = "${k}-assgn"
+        name                 = "CHOP-${k}"
         scope                = "/providers/Microsoft.Management/managementGroups/mg11"
         policy_definition_id = v.policy_set_definition_id
         parameters           = ""
