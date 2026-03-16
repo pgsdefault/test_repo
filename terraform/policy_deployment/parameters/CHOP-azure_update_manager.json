@@ -77,7 +77,7 @@
       "value": "Any"
     }
   },
-  "chop-patchschedule-tagnameandvalue-vm.json": {
+  "chop-patchschedule-tagsnameandvalue-vm.json": {
     "allowedTagValues": {
       "value": [
         "ALL_DO_NOT_PATCH"

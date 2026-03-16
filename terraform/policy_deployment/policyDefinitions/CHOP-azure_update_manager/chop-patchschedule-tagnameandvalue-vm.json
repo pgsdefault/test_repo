@@ -1,5 +1,5 @@
 {
-  "name": "chop-patchschedule-tagnameandvalue-vm",
+  "name": "chop-patchschedule-tagsnameandvalue-vm",
   "displayName": "CHOP Enforce Patch Schedule Tag name and Tag values on Virtual Machines",
   "description": "",
   "policyType": "Custom",
