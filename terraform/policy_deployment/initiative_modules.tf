@@ -103,7 +103,7 @@ module "initiative_assignment" {
 
 resource "azurerm_management_group_policy_assignment" "cisv3_assignment" {
 
-  name                 = "CHOP-CIS Azure Foundations v3.0.0"
+  name                 = "CHOP-CIS Azure Fdns v3"
   management_group_id  = "/providers/Microsoft.Management/managementGroups/mymg"
   policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/470a962c-86a0-433b-803a-3c176b5ce79c"
 
