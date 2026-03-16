@@ -74,7 +74,7 @@ locals {
     {
       name                 = "dcr-association-linux"
       policy_definition_id = "/providers/microsoft.authorization/policydefinitions/2ea82cdd-f2e8-4500-af75-67a2e084ca74"
-      parameter_values     = jsonencode(lookup(local.policy_parameters, "Configure Windows Machines to be associated with a Data Collection Rule or a Data Collection Endpoint", {}))
+      parameter_values     = jsonencode(lookup(local.policy_parameters, "Configure Linux Machines to be associated with a Data Collection Rule or a Data Collection Endpoint", {}))
       policy_group_names   = []
     },
 
