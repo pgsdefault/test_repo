@@ -1,0 +1,47 @@
+{
+  "name": "storage-disable-public-network-access",
+  "displayName": "CHOP Public access for all network should be disabled in Storage accounts",
+  "description": "",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+    "category": "Storage Accounts",
+    "custom_policy_mapping": []
+  },
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "equals": "Microsoft.Storage/storageAccounts",
+          "field": "type"
+        },
+        {
+          "field": "Microsoft.Storage/storageAccounts/publicNetworkAccess",
+          "notEquals": "Disabled"
+        },
+        {
+          "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
+          "notEquals": "Deny"
+        }
+      ]
+    },
+    "then": {
+      "effect": "[parameters('effect')]"
+    }
+  },
+  "parameters": {
+    "effect": {
+      "type": "String",
+      "metadata": {
+        "description": "'Audit' allows a non-compliant resource to be created, but flags it as non-compliant. 'Deny' blocks the resource creation. 'Disable' turns off the policy.",
+        "displayName": "Effect"
+      },
+      "allowedValues": [
+        "audit",
+        "deny",
+        "disabled"
+      ],
+      "defaultValue": "deny"
+    }
+  }
+}

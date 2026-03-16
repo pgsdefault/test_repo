@@ -1,0 +1,371 @@
+{
+    "[Preview]: Deploy Microsoft Defender for Endpoint agent on Windows virtual machines": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "PublishersToExclude": {
+            "value": []
+        },
+        "ImageIdsToExclude": {
+            "value": []
+        }
+    },
+    "[Preview]: Deploy Microsoft Defender for Endpoint agent on Linux virtual machines": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "PublishersToExclude": {
+            "value": []
+        },
+        "ImageIdsToExclude": {
+            "value": []
+        }
+    },
+    "Configure Windows virtual machines to run Azure Monitor Agent with user-assigned managed identity-based authentication": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "bringYourOwnUserAssignedManagedIdentity": {
+            "value": true
+        },
+        "restrictBringYourOwnUserAssignedIdentityToSubscription": {
+            "value": false
+        },
+        "userAssignedIdentityResourceId": {
+            "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ptesting2"
+        },
+        "userAssignedManagedIdentityName": {
+            "value": "ptesting2"
+        },
+        "userAssignedManagedIdentityResourceGroup": {
+            "value": "Sk_testing"
+        },
+        "scopeToSupportedImages": {
+            "value": true
+        },
+        "listOfWindowsImageIdToInclude": {
+            "value": []
+        },
+        "listOfApplicableLocations": {
+            "value": [
+                "australiacentral",
+                "australiacentral2",
+                "australiaeast",
+                "australiasoutheast",
+                "brazilsouth",
+                "brazilsoutheast",
+                "canadacentral",
+                "canadaeast",
+                "centralindia",
+                "centralus",
+                "centraluseuap",
+                "eastasia",
+                "eastus2euap",
+                "eastus",
+                "eastus2",
+                "francecentral",
+                "francesouth",
+                "germanynorth",
+                "germanywestcentral",
+                "israelcentral",
+                "italynorth",
+                "japaneast",
+                "japanwest",
+                "jioindiacentral",
+                "jioindiawest",
+                "koreacentral",
+                "koreasouth",
+                "malaysiasouth",
+                "mexicocentral",
+                "northcentralus",
+                "northeurope",
+                "norwayeast",
+                "norwaywest",
+                "polandcentral",
+                "qatarcentral",
+                "southafricanorth",
+                "southafricawest",
+                "southcentralus",
+                "southeastasia",
+                "southindia",
+                "spaincentral",
+                "swedencentral",
+                "swedensouth",
+                "switzerlandnorth",
+                "switzerlandwest",
+                "taiwannorth",
+                "taiwannorthwest",
+                "uaecentral",
+                "uaenorth",
+                "uksouth",
+                "ukwest",
+                "westcentralus",
+                "westeurope",
+                "westindia",
+                "westus",
+                "westus2",
+                "westus3",
+                "chinaeast",
+                "chinaeast2",
+                "chinaeast3",
+                "chinanorth",
+                "chinanorth2",
+                "chinanorth3",
+                "usgovarizona",
+                "usgovtexas",
+                "usgovvirginia",
+                "usdodeast",
+                "usdodcentral",
+                "chilecentral",
+                "newzealandnorth"
+            ]
+        }
+    },
+    "Configure Windows Machines to be associated with a Data Collection Rule or a Data Collection Endpoint": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "scopeToSupportedImages": {
+            "value": true
+        },
+        "listOfWindowsImageIdToInclude": {
+            "value": []
+        },
+        "dcrResourceId": {
+            "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/Sk_testing/providers/microsoft.insights/datacollectionrules/PuRule"
+        },
+        "resourceType": {
+            "value": "Microsoft.Insights/dataCollectionRules"
+        },
+        "listOfApplicableLocations": {
+            "value": [
+                "australiacentral",
+                "australiacentral2",
+                "australiaeast",
+                "australiasoutheast",
+                "brazilsouth",
+                "brazilsoutheast",
+                "canadacentral",
+                "canadaeast",
+                "centralindia",
+                "centralus",
+                "centraluseuap",
+                "eastasia",
+                "eastus",
+                "eastus2",
+                "eastus2euap",
+                "francecentral",
+                "francesouth",
+                "germanynorth",
+                "germanywestcentral",
+                "israelcentral",
+                "italynorth",
+                "japaneast",
+                "japanwest",
+                "jioindiacentral",
+                "jioindiawest",
+                "koreacentral",
+                "koreasouth",
+                "malaysiasouth",
+                "mexicocentral",
+                "northcentralus",
+                "northeurope",
+                "norwayeast",
+                "norwaywest",
+                "polandcentral",
+                "qatarcentral",
+                "southafricanorth",
+                "southafricawest",
+                "southcentralus",
+                "southeastasia",
+                "southindia",
+                "spaincentral",
+                "swedencentral",
+                "swedensouth",
+                "switzerlandnorth",
+                "switzerlandwest",
+                "taiwannorth",
+                "taiwannorthwest",
+                "uaecentral",
+                "uaenorth",
+                "uksouth",
+                "ukwest",
+                "westcentralus",
+                "westeurope",
+                "westindia",
+                "westus",
+                "westus2",
+                "westus3",
+                "chilecentral",
+                "newzealandnorth"
+            ]
+        }
+    },
+    "Configure Linux virtual machines to run Azure Monitor Agent with user-assigned managed identity-based authentication": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "bringYourOwnUserAssignedManagedIdentity": {
+            "value": true
+        },
+        "restrictBringYourOwnUserAssignedIdentityToSubscription": {
+            "value": false
+        },
+        "userAssignedIdentityResourceId": {
+            "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourceGroups/Sk_testing/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ptesting2"
+        },
+        "userAssignedManagedIdentityName": {
+            "value": "ptesting2"
+        },
+        "userAssignedManagedIdentityResourceGroup": {
+            "value": "Sk_testing"
+        },
+        "scopeToSupportedImages": {
+            "value": true
+        },
+        "listOfLinuxImageIdToInclude": {
+            "value": []
+        }
+    },
+    "Configure Linux Machines to be associated with a Data Collection Rule or a Data Collection Endpoint": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "scopeToSupportedImages": {
+            "value": true
+        },
+        "listOfLinuxImageIdToInclude": {
+            "value": []
+        },
+        "dcrResourceId": {
+            "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/Sk_testing/providers/microsoft.insights/datacollectionrules/Pulinux"
+        },
+        "resourceType": {
+            "value": "Microsoft.Insights/dataCollectionRules"
+        }
+    },
+    "Set prerequisite for Scheduling recurring updates on Azure virtual machines-Windows": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "resourceGroups": {
+            "value": []
+        },
+        "operatingSystemTypes": {
+            "value": [
+                "Windows"
+            ]
+        },
+        "locations": {
+            "value": []
+        },
+        "tagOperator": {
+            "value": "Any"
+        },
+        "tagValues": {
+            "value": []
+        }
+    },
+    "Set prerequisite for Scheduling recurring updates on Azure virtual machines-Linux": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "resourceGroups": {
+            "value": []
+        },
+        "operatingSystemTypes": {
+            "value": [
+                "Linux"
+            ]
+        },
+        "locations": {
+            "value": []
+        },
+        "tagOperator": {
+            "value": "Any"
+        },
+        "tagValues": {
+            "value": []
+        }
+    },
+    "Configure periodic checking for missing system updates on azure virtual machines-Windows": {
+        "assessmentMode": {
+            "value": "AutomaticByPlatform"
+        },
+        "osType": {
+            "value": "Windows"
+        },
+        "locations": {
+            "value": []
+        },
+        "tagValues": {
+            "value": {}
+        },
+        "tagOperator": {
+            "value": "Any"
+        }
+    },
+    "Configure periodic checking for missing system updates on azure virtual machines-Linux": {
+        "assessmentMode": {
+            "value": "AutomaticByPlatform"
+        },
+        "osType": {
+            "value": "Linux"
+        },
+        "locations": {
+            "value": []
+        },
+        "tagValues": {
+            "value": {}
+        },
+        "tagOperator": {
+            "value": "Any"
+        }
+    },
+    "Schedule recurring updates using Azure Update Manager-Windows": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "maintenanceConfigurationResourceId": {
+            "value": ""
+        },
+        "resourceGroups": {
+            "value": []
+        },
+        "operatingSystemTypes": {
+            "value": "Windows"
+        },
+        "locations": {
+            "value": []
+        },
+        "tagValues": {
+            "value": []
+        },
+        "tagOperator": {
+            "value": "Any"
+        }
+    },
+    "Schedule recurring updates using Azure Update Manager-Linux": {
+        "effect": {
+            "value": "DeployIfNotExists"
+        },
+        "maintenanceConfigurationResourceId": {
+            "value": ""
+        },
+        "resourceGroups": {
+            "value": []
+        },
+        "operatingSystemTypes": {
+            "value": "Linux"
+        },
+        "locations": {
+            "value": []
+        },
+        "tagValues": {
+            "value": []
+        },
+        "tagOperator": {
+            "value": "Any"
+        }
+    }
+}

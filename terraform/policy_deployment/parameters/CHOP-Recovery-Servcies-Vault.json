@@ -3,5 +3,10 @@
         "effect": {
             "value": "Modify"
         }
+    },
+    "backup-and-siterecovery-geo-redundant.json": {
+        "effect": {
+            "value": "Deny"
+        }
     }
 }

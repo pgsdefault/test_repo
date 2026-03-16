@@ -1,0 +1,7 @@
+{
+    "storage-disable-public-network-access.json": {
+        "effect": {
+            "value": "deny"
+        }
+    }
+}
