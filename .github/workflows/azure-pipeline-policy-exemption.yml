@@ -1,0 +1,88 @@
+name: Azure Policy Exemption Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'terraform/exemption/**'
+
+env:
+  TF_VERSION: 1.6.0
+  TF_ROOT: terraform/exemption
+
+jobs:
+  terraform:
+    name: Terraform Exemption Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+
+      # ==================== TERRAFORM INIT ====================
+      - name: Terraform Init
+        working-directory: ${{ env.TF_ROOT }}
+        run: |
+          terraform init \
+            -reconfigure \
+            -upgrade \
+            -input=false \
+            -backend-config="key=exemption.tfstate"
+        env:
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== TERRAFORM PLAN ====================
+      - name: Terraform Plan
+        working-directory: ${{ env.TF_ROOT }}
+        run: |
+          terraform plan -out=tfplan \
+            -lock=true \
+            -lock-timeout=10m \
+            -input=false
+        env:
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== TERRAFORM APPLY ====================
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
+        working-directory: ${{ env.TF_ROOT }}
+        run: terraform apply -auto-approve -lock=true tfplan
+        env:
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== EXPORT STATE ====================
+      - name: Export Terraform State & Outputs
+        if: always()
+        working-directory: ${{ env.TF_ROOT }}
+        run: |
+          terraform state pull > ${{ github.workspace }}/exemption.tfstate
+          terraform output -json > ${{ github.workspace }}/exemption_outputs.json
+        env:
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+      # ==================== UPLOAD ARTIFACTS ====================
+      - name: Upload Exemption Outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Exemption-Outputs
+          path: exemption_outputs.json

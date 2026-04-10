@@ -31,6 +31,11 @@ module "vm_security_agents_initiative_loader" {
   management_group_id = var.management_group_id
 }
 
+module "inherit_mandatory_tags_initiative_loader" {
+  source              = "./policySetDefinitions/CHOP-Inherit-Mandatory-Tags_initiatives"
+  management_group_id = var.management_group_id
+}
+
 
 # ------------------ Initiative Loader Locals ------------------
 # Update this locals block when you add a new initiative/service in initiative_loader.tf.
@@ -41,7 +46,7 @@ locals {
 
     Update_Manager = module.update_manager_initiative_loader.azure_update_manager_initiative
 
-    Diagnostics    = module.diagnostics_initiative_loader.Diagnostics_initiative
+    Diagnostics = module.diagnostics_initiative_loader.Diagnostics_initiative
 
     Recovery_Vaults = module.recovery_vaults_initiative_loader.RecoveryVaults_initiative
 
@@ -50,6 +55,8 @@ locals {
     Storage_Accounts = module.storage_initiative_loader.storage_accounts_initiative
 
     VM_Security_Agents = module.vm_security_agents_initiative_loader.vm_monitoring_security_initiative
+
+    Inherit_Tags = module.inherit_mandatory_tags_initiative_loader.Inherit_Tags_initiative
   }
 
 }

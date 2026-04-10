@@ -1,0 +1,57 @@
+{
+    "Inherit a tag from the resource group if missing - owner": {
+        "tagName": {
+            "value": "owner"
+        }
+    },
+    "Inherit a tag from the resource group if missing - technical_contact": {
+        "tagName": {
+            "value": "technical_contact"
+        }
+    },
+    "Inherit a tag from the resource group if missing - support_group": {
+        "tagName": {
+            "value": "support_group"
+        }
+    },
+    "Inherit a tag from the resource group if missing - application": {
+        "tagName": {
+            "value": "application"
+        }
+    },
+    "Inherit a tag from the resource group if missing - environment": {
+        "tagName": {
+            "value": "environment"
+        }
+    },
+    "Inherit a tag from the resource group if missing - automation_version": {
+        "tagName": {
+            "value": "automation_version"
+        }
+    },
+    "Inherit a tag from the resource group if missing - cost_center": {
+        "tagName": {
+            "value": "cost_center"
+        }
+    },
+    "Inherit a tag from the resource group if missing - lifecycle": {
+        "tagName": {
+            "value": "lifecycle"
+        }
+    },
+    "chop-inherit-rg-tags-VM-backup.json": {
+        "tagName": {
+            "value": "backup"
+        }
+    },
+    "chop-inherit-rg-tags-VM-dr_tier.json": {
+        "tagName": {
+            "value": "dr_tier"
+        }
+    },
+    "chop-inherit-rg-tags-VM-patch_schedule.json": {
+        "tagName": {
+            "value": "patch_schedule"
+        }
+    }
+}
