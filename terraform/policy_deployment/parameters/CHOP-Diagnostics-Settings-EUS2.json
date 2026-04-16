@@ -11,11 +11,11 @@
     },
     "resourceLocationList": {
       "value": [
-        "*"
+        "eastus2"
       ]
     },
     "logAnalytics": {
-      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
+      "value": "log-hos-mgmt-prd-cp-eus2"
     }
   },
   "Enable logging by category group for Recovery Services vaults (microsoft.recoveryservices/vaults) to Log Analytics": {
@@ -30,11 +30,11 @@
     },
     "resourceLocationList": {
       "value": [
-        "*"
+        "eastus2"
       ]
     },
     "logAnalytics": {
-      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
+      "value": "log-hos-mgmt-prd-cp-eus2"
     }
   },
   "Enable logging by category group for Load balancers (microsoft.network/loadbalancers) to Log Analytics": {
@@ -49,11 +49,11 @@
     },
     "resourceLocationList": {
       "value": [
-        "*"
+        "eastus2"
       ]
     },
     "logAnalytics": {
-      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
+      "value": "log-hos-mgmt-prd-cp-eus2"
     }
   },
   "Enable logging by category group for Public IP addresses (microsoft.network/publicipaddresses) to Log Analytics": {
@@ -68,11 +68,11 @@
     },
     "resourceLocationList": {
       "value": [
-        "*"
+        "eastus2"
       ]
     },
     "logAnalytics": {
-      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
+      "value": "log-hos-mgmt-prd-cp-eus2"
     }
   },
   "Enable logging by category group for Automation Accounts (microsoft.automation/automationaccounts) to Log Analytics": {
@@ -87,11 +87,11 @@
     },
     "resourceLocationList": {
       "value": [
-        "*"
+        "eastus2"
       ]
     },
     "logAnalytics": {
-      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
+      "value": "log-hos-mgmt-prd-cp-eus2"
     }
   },
   "Enable logging by category group for Virtual network gateways (microsoft.network/virtualnetworkgateways) to Log Analytics": {
@@ -106,11 +106,34 @@
     },
     "resourceLocationList": {
       "value": [
-        "*"
+        "eastus2"
       ]
     },
     "logAnalytics": {
-      "value": "/subscriptions/d1ff6b24-f9e0-4125-addc-70b229cc1330/resourcegroups/sk_testing/providers/microsoft.operationalinsights/workspaces/log1"
+      "value": "log-hos-mgmt-prd-cp-eus2"
+    }
+  },
+  "Deploy-VNet-FlowLogs-CustomRG.json": {
+    "effect": {
+      "value": "DeployIfNotExists"
+    },
+    "networkWatcherRG": {
+      "value": ""
+    },
+    "workspaceRegion": {
+      "value": "eastus2"
+    },
+    "retentionDays": {
+      "value": "0"
+    },
+    "timeIntervalInMins": {
+      "value": "60"
+    },
+    "updateFlowlog": {
+      "value": "false"
+    },
+    "resourceGroupName": {
+      "value": "epic-policy-test"
     }
   }
 }

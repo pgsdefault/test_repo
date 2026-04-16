@@ -1,12 +1,12 @@
 variable "management_group_id" {
   description = "Optional management group ID for policy definition scope. If not set, policy is created at subscription scope."
   type        = string
-  default     = "mymg"
+  default     = ""
 }
 
 locals {
-  custom_policy_files = fileset("${path.module}/../../policyDefinitions/CHOP-Diagnostics-Settings", "*.json")
-  policy_parameters   = jsondecode(file("${path.module}/../../parameters/CHOP-Diagnostics-Settings.json"))
+  custom_policy_files = fileset("${path.module}/../../policyDefinitions/CHOP-Diagnostics-Settings-EUS2", "*.json")
+  policy_parameters   = jsondecode(file("${path.module}/../../parameters/CHOP-Diagnostics-Settings-EUS2.json"))
   policy_group_files  = fileset("${path.module}/../../compliance_standard", "*.json")
 
   policy_definition_groups = flatten([
@@ -17,7 +17,7 @@ locals {
   custom_policy_group_mapping = {
     for file in local.custom_policy_files :
     file => lookup(
-      jsondecode(file("${path.module}/../../policyDefinitions/CHOP-Diagnostics-Settings/${file}")).metadata,
+      jsondecode(file("${path.module}/../../policyDefinitions/CHOP-Diagnostics-Settings-EUS2/${file}")).metadata,
       "custom_policy_mapping",
       null
     )
@@ -27,7 +27,7 @@ locals {
 module "custom_policy" {
   source              = "../../modules/policy_definition"
   for_each            = toset(local.custom_policy_files)
-  policy_json_path    = "${path.module}/../../policyDefinitions/CHOP-Diagnostics-Settings/${each.key}"
+  policy_json_path    = "${path.module}/../../policyDefinitions/CHOP-Diagnostics-Settings-EUS2/${each.key}"
   management_group_id = var.management_group_id
   name = lower(replace(replace(each.key, ".json", ""), " ", "-"))
 }
@@ -91,10 +91,10 @@ locals {
   ]
 }
 
-output "Diagnostics_initiative" {
+output "Diagnostics_eus2_initiative" {
   value = {
-    name                     = "CHOP-Diagnostics-Settings-initiative"
-    display_name             = "CHOP-EPIC-Diagnostics Settings Initiative"
+    name                     = "CHOP-Diagnostics-Settings-eus2-initiative"
+    display_name             = "CHOP-EPIC-Diagnostics Settings Initiative-EastUS2"
     description              = "Initiative for CHOP-Diagnostics Settings resources, including custom and built-in policies."
     policy_definitions       = local.policy_definitions
     policy_definition_groups = local.filtered_policy_definition_groups

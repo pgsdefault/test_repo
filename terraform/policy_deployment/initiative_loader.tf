@@ -6,8 +6,13 @@ module "update_manager_initiative_loader" {
   management_group_id = var.management_group_id
 }
 
-module "diagnostics_initiative_loader" {
-  source              = "./policySetDefinitions/CHOP-Diagnostics-Settings_initiatives"
+module "diagnostics_eus2_initiative_loader" {
+  source              = "./policySetDefinitions/CHOP-Diagnostics-Settings-eus2_initiatives"
+  management_group_id = var.management_group_id
+}
+
+module "diagnostics_cus_initiative_loader" {
+  source              = "./policySetDefinitions/CHOP-Diagnostics-Settings-cus_initiatives"
   management_group_id = var.management_group_id
 }
 
@@ -46,7 +51,9 @@ locals {
 
     Update_Manager = module.update_manager_initiative_loader.azure_update_manager_initiative
 
-    Diagnostics = module.diagnostics_initiative_loader.Diagnostics_initiative
+    Diagnostics_EUS2 = module.diagnostics_eus2_initiative_loader.Diagnostics_eus2_initiative
+
+    Diagnostics_CUS = module.diagnostics_cus_initiative_loader.Diagnostics_cus_initiative
 
     Recovery_Vaults = module.recovery_vaults_initiative_loader.RecoveryVaults_initiative
 
